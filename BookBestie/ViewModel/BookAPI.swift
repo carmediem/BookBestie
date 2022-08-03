@@ -81,7 +81,7 @@ class BookController {
 
             URLSession.shared.dataTask(with: imageURL) { data, _, error in
                 if let error = error {
-                    print("There was an error fetching the image")
+                    print("There was an error ftching the image")
                     return completion(.failure(.thrownError(error)))
                 }
                 
@@ -91,4 +91,5 @@ class BookController {
                 completion(.success(image))
             }.resume()
         }
+        
 }//end of class
