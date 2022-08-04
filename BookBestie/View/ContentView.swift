@@ -15,11 +15,13 @@ struct ContentView: View {
                 EmptyView()
                 
             }
-            .navigationBarTitle("📚Book Search📚")
+            
         }
+        .navigationBarTitle("📚Book Search📚")
     }
 }
 
+//Empty view when a new user opens the app and hasnt listed any favorite books yet. Will have the inspiration or book quote under this.
 struct EmptyView: View {
     var body: some View {
         VStack {
@@ -33,6 +35,21 @@ struct EmptyView: View {
         }
         .padding()
         .foregroundColor(Color(.systemCyan))
+    }
+}
+
+
+struct Card: View {
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+        Image("harrypotter")
+                .resizable()
+                .clipShape(RoundedRectangle(cornerRadius: 4))
+            Text("Harry Potter")
+                .font(.headline)
+            Text("JK Rowling")
+                .font(.body)
+        }
     }
 }
 
@@ -67,31 +84,3 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
-
-//import SwiftUI
-//
-//
-//struct ContentView: View {
-//    var body: some View {
-//        VStack(alignment: .leading, spacing: 8) {
-//                 Image("BookImage")
-//                     .resizable()
-//                     .clipShape(RoundedRectangle(cornerRadius: 4))
-//
-//                 Text("Book Title")
-//                     .font(.headline)
-//
-//                 Text("Author Name")
-//                     .font(.body)
-//                     .lineLimit(1)
-//             }
-//         }
-//     }
-//
-//
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
