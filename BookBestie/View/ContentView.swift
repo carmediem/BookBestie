@@ -38,21 +38,6 @@ struct EmptyView: View {
     }
 }
 
-
-struct Card: View {
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-        Image("harrypotter")
-                .resizable()
-                .clipShape(RoundedRectangle(cornerRadius: 4))
-            Text("Harry Potter")
-                .font(.headline)
-            Text("JK Rowling")
-                .font(.body)
-        }
-    }
-}
-
 struct SearchBar: UIViewRepresentable {
     //this will allow us to embed our UI view into our SwiftUI view
     typealias UIViewType = UISearchBar

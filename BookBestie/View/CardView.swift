@@ -9,22 +9,16 @@
 import SwiftUI
 import UIKit
 
-
 struct Card: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-                 Image("BookImage")
-                     .resizable()
-                     .clipShape(RoundedRectangle(cornerRadius: 4))
-
-                 Text("Book Title")
-                     .font(.headline)
-
-                 Text("Author Name")
-                     .font(.body)
-                     .lineLimit(1)
-             }
-         }
-     }
-
-
+        Image("harrypotter")
+                .resizable()
+                .clipShape(RoundedRectangle(cornerRadius: 4))
+            Text("Harry Potter")
+                .font(.headline)
+            Text("JK Rowling")
+                .font(.body)
+        }
+    }
+}
