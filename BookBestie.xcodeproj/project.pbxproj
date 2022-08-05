@@ -28,6 +28,12 @@
 		28F4CDFF2899B45D001A00EF /* BookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4CDFE2899B45D001A00EF /* BookAPI.swift */; };
 		28F4CE012899B83C001A00EF /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4CE002899B83C001A00EF /* BookRowView.swift */; };
 		28F4CE032899BD1A001A00EF /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4CE022899BD1A001A00EF /* CardView.swift */; };
+		28F4CE0A2899C249001A00EF /* BookRowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4CE092899C249001A00EF /* BookRowViewController.swift */; };
+		3C414BAF289CAF69005C7C88 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C414BAE289CAF69005C7C88 /* Storyboard.storyboard */; };
+		3C414BB1289CAF7D005C7C88 /* ImageView_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C414BB0289CAF7D005C7C88 /* ImageView_ViewController.swift */; };
+		3C414BB5289CAFC9005C7C88 /* PencilKitAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C414BB4289CAFC9005C7C88 /* PencilKitAppDelegate.swift */; };
+		3C414BB7289CAFE6005C7C88 /* PencilKitSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C414BB6289CAFE6005C7C88 /* PencilKitSceneDelegate.swift */; };
+		3C414BB9289CB2D9005C7C88 /* PencilKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C414BB8289CB2D9005C7C88 /* PencilKitViewController.swift */; };
 		6DB76ED8289C741400FD9E47 /* CollectionViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB76ED7289C741400FD9E47 /* CollectionViewRepresentable.swift */; };
 		D36428982899E1850005BE81 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36428972899E1850005BE81 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +61,12 @@
 		28F4CDFE2899B45D001A00EF /* BookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAPI.swift; sourceTree = "<group>"; };
 		28F4CE002899B83C001A00EF /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
 		28F4CE022899BD1A001A00EF /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		28F4CE092899C249001A00EF /* BookRowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowViewController.swift; sourceTree = "<group>"; };
+		3C414BAE289CAF69005C7C88 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		3C414BB0289CAF7D005C7C88 /* ImageView_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView_ViewController.swift; sourceTree = "<group>"; };
+		3C414BB4289CAFC9005C7C88 /* PencilKitAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitAppDelegate.swift; sourceTree = "<group>"; };
+		3C414BB6289CAFE6005C7C88 /* PencilKitSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitSceneDelegate.swift; sourceTree = "<group>"; };
+		3C414BB8289CB2D9005C7C88 /* PencilKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilKitViewController.swift; sourceTree = "<group>"; };
 		6DB76ED7289C741400FD9E47 /* CollectionViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewRepresentable.swift; sourceTree = "<group>"; };
 		D36428972899E1850005BE81 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				28DB7CEF289C86DD00222420 /* AppFlow.swift */,
+				3C414BAD289CAECA005C7C88 /* PencilKit */,
 				28F4CDE82899A6BB001A00EF /* BookBestieApp.swift */,
 				28DB7CEC289C852500222420 /* CoreData.xcdatamodeld */,
 				28F4CDF62899B33C001A00EF /* Model */,
@@ -172,6 +185,18 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		3C414BAD289CAECA005C7C88 /* PencilKit */ = {
+			isa = PBXGroup;
+			children = (
+				3C414BAE289CAF69005C7C88 /* Storyboard.storyboard */,
+				3C414BB0289CAF7D005C7C88 /* ImageView_ViewController.swift */,
+				3C414BB4289CAFC9005C7C88 /* PencilKitAppDelegate.swift */,
+				3C414BB6289CAFE6005C7C88 /* PencilKitSceneDelegate.swift */,
+				3C414BB8289CB2D9005C7C88 /* PencilKitViewController.swift */,
+			);
+			path = PencilKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -232,6 +257,7 @@
 			files = (
 				28F4CDF02899A6BD001A00EF /* Preview Assets.xcassets in Resources */,
 				28F4CDED2899A6BD001A00EF /* Assets.xcassets in Resources */,
+				3C414BAF289CAF69005C7C88 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +271,7 @@
 				28F4CDFD2899B409001A00EF /* BookInfo.swift in Sources */,
 				28DB7CF0289C86DD00222420 /* AppFlow.swift in Sources */,
 				28DB7CF2289C8ACB00222420 /* FavoriteBookListViewModel.swift in Sources */,
+				3C414BB5289CAFC9005C7C88 /* PencilKitAppDelegate.swift in Sources */,
 				28DB7CE6289C757B00222420 /* FavoriteBookListView.swift in Sources */,
 				28DB7CF4289C8CB500222420 /* SortView.swift in Sources */,
 				28DB7D18289CC3FD00222420 /* BookListViewModel.swift in Sources */,
@@ -257,8 +284,12 @@
 				28DB7D1A289CCAAB00222420 /* BookSearchExtension.swift in Sources */,
 				28DB7CE0289C74E900222420 /* Login View.swift in Sources */,
 				28F4CDEB2899A6BB001A00EF /* ContentView.swift in Sources */,
+				3C414BB9289CB2D9005C7C88 /* PencilKitViewController.swift in Sources */,
+				28F4CE0A2899C249001A00EF /* BookRowViewController.swift in Sources */,
+				3C414BB7289CAFE6005C7C88 /* PencilKitSceneDelegate.swift in Sources */,
 				6DB76ED8289C741400FD9E47 /* CollectionViewRepresentable.swift in Sources */,
 				28F4CDFB2899B3D7001A00EF /* BookError.swift in Sources */,
+				3C414BB1289CAF7D005C7C88 /* ImageView_ViewController.swift in Sources */,
 				28DB7CEB289C75B200222420 /* BookDataStore.swift in Sources */,
 				28F4CE012899B83C001A00EF /* BookRowView.swift in Sources */,
 				28F4CDE92899A6BB001A00EF /* BookBestieApp.swift in Sources */,
