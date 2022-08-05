@@ -5,6 +5,9 @@
 //  Created by Carmen Chiu on 8/2/22.
 //
 
+//MARK: -- THIS IS WHAT EACH ROW OF THE SEARCH RESULT SHOULD DISPLAY AS- book thumbnail, title, author, and a heart.
+//TBD- if the heart button is tapped, it will add it to the favorites list. Otherwise, can add a button to add to favoriteBooKList
+
 import SwiftUI
 
 struct BookRowView: View {
@@ -31,7 +34,7 @@ struct BookRowView: View {
                  
                  HStack {
                      Image(systemName: "heart")
-                     Text("393")
+                 
                      
                  }
              }

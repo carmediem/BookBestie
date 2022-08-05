@@ -5,6 +5,9 @@
 //  Created by Carmen Chiu on 8/3/22.
 //
 
+//MARK: -- This is the view where the user can click into to see additional details of the book. The user will navigate to this page view after they click on the search result.
+//navigation link from search result text field to this view.
+//The favorite button can be here. Clicking it will add it to the favorite list
 
 import SwiftUI
 
