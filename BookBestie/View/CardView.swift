@@ -5,6 +5,7 @@
 //  Created by Carmen Chiu on 8/2/22.
 //
 
+//MARK: -- THIS IS WHAT EACH CELL WILL LOOK LIKE IN THE UIVIEWCOLLECTION FOR THE THREE - FIVE FAVORITE BOOKS
 
 import SwiftUI
 import UIKit

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDBook" representedClassName="CDBook" syncable="YES" codeGenerationType="class">
+        <attribute name="cdAuthor" optional="YES" attributeType="String"/>
+        <attribute name="cdAverageRating" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cdDescription" optional="YES" attributeType="String"/>
+        <attribute name="cdID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="cdImage" optional="YES" attributeType="Binary"/>
+        <attribute name="cdPageCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="cdTitle" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
+        <attribute name="noteTextField" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Note" positionX="-54" positionY="-9" width="128" height="44"/>
+        <element name="CDBook" positionX="-36" positionY="9" width="128" height="134"/>
+    </elements>
+</model>
