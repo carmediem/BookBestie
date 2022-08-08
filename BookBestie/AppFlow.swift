@@ -11,6 +11,7 @@ import SwiftUI
 struct AppFlow: View {
     
     var body: some View {
+        LoginView()
         TabView {
             ContentView()
                 .tabItem {
