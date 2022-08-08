@@ -9,11 +9,17 @@
         <attribute name="cdPageCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="cdTitle" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="DrawingDoc" representedClassName="DrawingDoc" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="Note" representedClassName="Note" syncable="YES" codeGenerationType="class">
         <attribute name="noteTextField" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Note" positionX="-54" positionY="-9" width="128" height="44"/>
         <element name="CDBook" positionX="-36" positionY="9" width="128" height="134"/>
+        <element name="Note" positionX="-54" positionY="-9" width="128" height="44"/>
+        <element name="DrawingDoc" positionX="-36" positionY="63" width="128" height="74"/>
     </elements>
 </model>
