@@ -16,7 +16,6 @@ class BookSearchViewController: UIViewController {
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
     }
-    
     var books: [BookInfo] = []
     
     var stackView: UIStackView = {
@@ -74,28 +73,38 @@ class BookSearchViewController: UIViewController {
     }
 }
 
-extension BookSearchViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "bookCell")
-        let book = books[indexPath.row]
-        
-        BookController.fetchImage(for: book) {result in
-            DispatchQueue.main.async {
-                switch result {
-                case.success(let thumbnail):
-                    cell.imageView?.image = thumbnail
-                case.failure(_):
-                    print("We did not get an image")
-                }
-                cell.textLabel?.text = book.title
-                cell.detailTextLabel?.text = book.authors?.first }
+extension BookSearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       let book = books[indexPath.row]
+        var vc = BookDetailView(book: book)
+        vc.title = book.title
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+    
+    extension BookSearchViewController: UITableViewDataSource {
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return books.count
         }
-        return cell
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "bookCell")
+            let book = books[indexPath.row]
+            
+            BookController.fetchImage(for: book) {result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case.success(let thumbnail):
+                        cell.imageView?.image = thumbnail
+                    case.failure(_):
+                        print("We did not get an image")
+                    }
+                    cell.textLabel?.text = book.title
+                    cell.detailTextLabel?.text = book.authors?.first }
+            }
+            return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return books.count
-    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }

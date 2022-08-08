@@ -25,7 +25,6 @@
 		6D8893BA28A06AD300C4EF8E /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939628A06AD300C4EF8E /* QuoteView.swift */; };
 		6D8893BB28A06AD400C4EF8E /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939728A06AD300C4EF8E /* AppFlow.swift */; };
 		6D8893BC28A06AD400C4EF8E /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939928A06AD300C4EF8E /* BookInfo.swift */; };
-		6D8893BD28A06AD400C4EF8E /* CollectionViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939B28A06AD300C4EF8E /* CollectionViewRepresentable.swift */; };
 		6D8893BE28A06AD400C4EF8E /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939C28A06AD300C4EF8E /* BookCollectionViewCell.swift */; };
 		6D8893BF28A06AD400C4EF8E /* Login View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939D28A06AD300C4EF8E /* Login View.swift */; };
 		6D8893C028A06AD400C4EF8E /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939E28A06AD300C4EF8E /* BookDetailView.swift */; };
@@ -64,7 +63,6 @@
 		6D88939628A06AD300C4EF8E /* QuoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		6D88939728A06AD300C4EF8E /* AppFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		6D88939928A06AD300C4EF8E /* BookInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookInfo.swift; sourceTree = "<group>"; };
-		6D88939B28A06AD300C4EF8E /* CollectionViewRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewRepresentable.swift; sourceTree = "<group>"; };
 		6D88939C28A06AD300C4EF8E /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		6D88939D28A06AD300C4EF8E /* Login View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Login View.swift"; sourceTree = "<group>"; };
 		6D88939E28A06AD300C4EF8E /* BookDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
@@ -79,6 +77,7 @@
 		6D8893A928A06AD300C4EF8E /* BookSearchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSearchExtension.swift; sourceTree = "<group>"; };
 		6D8893AA28A06AD300C4EF8E /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		D351BBB228A1875F003E7961 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		D351BBB428A1A74F003E7961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D356030928A09EBE002B4360 /* BookSearchVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchVIewController.swift; sourceTree = "<group>"; };
 		D356030B28A0ABBA002B4360 /* BookSearchSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchSwiftUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +112,7 @@
 		6D88938028A06AD300C4EF8E /* BookBestie */ = {
 			isa = PBXGroup;
 			children = (
+				D351BBB428A1A74F003E7961 /* Info.plist */,
 				6D88938128A06AD300C4EF8E /* PencilKit */,
 				6D88938728A06AD300C4EF8E /* ViewModel */,
 				6D88938B28A06AD300C4EF8E /* CoreData.xcdatamodeld */,
@@ -190,7 +190,6 @@
 		6D88939A28A06AD300C4EF8E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6D88939B28A06AD300C4EF8E /* CollectionViewRepresentable.swift */,
 				6D88939C28A06AD300C4EF8E /* BookCollectionViewCell.swift */,
 				6D88939D28A06AD300C4EF8E /* Login View.swift */,
 				6D88939E28A06AD300C4EF8E /* BookDetailView.swift */,
@@ -337,7 +336,6 @@
 				6D8893C428A06AD400C4EF8E /* ContentView.swift in Sources */,
 				6D8893C228A06AD400C4EF8E /* BookRowView.swift in Sources */,
 				6D8893AD28A06AD300C4EF8E /* PencilKitSceneDelegate.swift in Sources */,
-				6D8893BD28A06AD400C4EF8E /* CollectionViewRepresentable.swift in Sources */,
 				6D8893C728A06AD400C4EF8E /* BookCollectionViewController.swift in Sources */,
 				6D8893B128A06AD300C4EF8E /* BookListViewModel.swift in Sources */,
 				6D8893C928A06AD400C4EF8E /* BookSearchExtension.swift in Sources */,
@@ -473,6 +471,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BookBestie/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookBestie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -501,6 +500,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BookBestie/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookBestie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

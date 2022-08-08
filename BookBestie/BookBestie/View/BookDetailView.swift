@@ -14,10 +14,13 @@ import SwiftUI
 struct BookDetailView: View {
     
    var book: BookInfo
+    var title: String = ""
 
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: 10) {
+                
+                
 //                ImageView(withURL: book.imageLinks?.thumbnail)
                 
                 

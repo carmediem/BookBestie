@@ -10,6 +10,7 @@ import UIKit
 
 //this embeds the Card inside a UICollectionView Cell
 
+
 class BookCollectionViewCell: UICollectionViewCell {
     
     static var reuseIdentifier = "BookCollectionViewCell"

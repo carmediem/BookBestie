@@ -17,15 +17,11 @@ struct QuoteView: View {
                 .font(.subheadline)
             Text("\(self.vm.author)")
                 .font(.subheadline)
-            
-                
-                
             }
         .padding()
         .onAppear() {
             self.vm.getQuotesData()
         }
-        
     }
 }
 
