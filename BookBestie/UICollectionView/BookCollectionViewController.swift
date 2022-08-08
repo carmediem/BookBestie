@@ -34,6 +34,7 @@ class BookCollectionViewController: UIViewController {
         return label
     }()
     
+    //Button to navigate to FavBookListView
     lazy var button: UIButton = {
         let button = UIButton()
         button.setTitleColor(.black, for: .normal)
@@ -59,10 +60,8 @@ class BookCollectionViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 16),
             collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 16),
             collectionView.heightAnchor.constraint(equalToConstant: 320)
-        
         ])
     }
- 
 }
 
 extension BookCollectionViewController: UICollectionViewDataSource {

@@ -7,10 +7,22 @@
 
 import Foundation
 
-class BookDataStore {
-    
-    static var books: [BookInfo] = [
-        
+class BookDataStore: ObservableObject {
+
+  @Published var books: [BookInfo] = []
+//  static var books: [BookInfo] = [
+
+  init() {
+    loadBooks()
+  }
+
+  func deleteBook(indexSet: IndexSet) {
+    books.remove(atOffsets: indexSet)
+  }
+
+ func loadBooks() {
+     if books.isEmpty {
+        books = [
         BookInfo(
             title: "Atomic Habits",
             authors: "James Clear",
@@ -90,4 +102,6 @@ class BookDataStore {
             imageLinks: BookInfo.BookImage(thumbnail: URL(string: "http://books.google.com/books/content?id=2ObWDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")!)
         )
     ]
+}
+ }
 }
