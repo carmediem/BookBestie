@@ -13,13 +13,18 @@ import SwiftUI
 struct BookRowView: View {
     
     var book: BookInfo
+    @State private var image: Image?
      
      var body: some View {
          HStack {
- //            Image(book.imageLinks)
- //                .resizable()
- //                .aspectRatio(contentMode: .fit)
- //                .frame(width: 100, height: 150)
+//             if let image = image {
+//                 Image(book.imageLinks?.thumbnail)
+//                 .resizable()
+//                 .aspectRatio(contentMode: .fit)
+//                 .frame(width: 100, height: 150)
+//             } else {
+//                 Image(systemName: "x.square.fill")
+//             }
              
              VStack(alignment: .leading) {
                  Text(book.title)
@@ -28,7 +33,7 @@ struct BookRowView: View {
                      .lineLimit(1)
                      .multilineTextAlignment(.leading)
                  
-                 Text(book.authors)
+                 Text(book.authors?.first ?? "No author found")
                      .fontWeight(.semibold)
                      .padding(6)
                  

@@ -17,7 +17,7 @@ struct AppFlow: View {
                 Label("Search", systemImage: "magnifyingglass")
                 }
             
-            FavBookListView()
+            FavoriteBookListView()
                 .tabItem {
                     Label("Favorites", systemImage: "magazine")
                 }

@@ -6,7 +6,6 @@
 //
 import UIKit
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
     
@@ -15,9 +14,6 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                Color("background").edgesIgnoringSafeArea(.all)
-
 //            List {
 //                ForEach($bookListViewModel.books) { item in
 //                    NavigationLink(destination: BookDetailView(book: item)) {
@@ -57,7 +53,7 @@ struct ContentView: View {
         }
     }
 }
-}
+
 
 //struct SearchBar: UIViewRepresentable {
 //    //this will allow us to embed our UI view into our SwiftUI view
@@ -97,46 +93,6 @@ struct EmptyView: View {
         }
         .padding()
         .foregroundColor(Color(.systemCyan))
-    }
-}
-// MARK: -- placeholders for the two views from the tab
-struct HomeView: View {
-    var body: some View {
-        NavigationView {
-            ZStack {
-                Color.red
-            }
-            .navigationTitle("Home/Search view")
-        }
-    }
-}
-
-struct SettingsView: View {
-        var body: some View {
-            NavigationView {
-                ZStack {
-                    Color.blue
-                }
-                .navigationTitle("Favorite Book List")
-            }
-        }
-}
-
-//MARK: -- Tab Views
-struct tabView: View {
-    var body: some View {
-        TabView {
-            ContentView()
-                .tabItem {
-                    Image(systemName: "face.smiling")
-                    Text("Login")
-                }
-            FavBookListView()
-                .tabItem {
-                    Image(systemName: "heart")
-                    Text("Fav books")
-                }
-        }
     }
 }
 

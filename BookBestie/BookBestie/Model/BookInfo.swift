@@ -8,6 +8,7 @@
 import Foundation
 
 struct TopLevelObject: Codable {
+    
     let items: [SecondLevelObject]
 }
 
@@ -17,14 +18,15 @@ struct SecondLevelObject: Codable {
 
 struct BookInfo: Codable {
     let title: String
-    let authors: String
-    let description: String
-    let pageCount: Int
-    let averageRating: Double
-    let imageLinks: BookImage
+    let authors: [String]?
+    let description: String?
+    let pageCount: Int?
+    let averageRating: Double?
+    let imageLinks: BookImage?
     
     struct BookImage: Codable {
         let thumbnail: URL
         
-    }
+        
+}
 }
