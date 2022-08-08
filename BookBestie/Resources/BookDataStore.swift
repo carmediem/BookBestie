@@ -14,6 +14,7 @@ class BookDataStore: ObservableObject {
 
   init() {
     loadBooks()
+        
   }
 
   func deleteBook(indexSet: IndexSet) {

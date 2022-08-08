@@ -11,7 +11,7 @@ import SwiftUI
 struct BookBestieApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            AppFlow()
         }
     }
 }
