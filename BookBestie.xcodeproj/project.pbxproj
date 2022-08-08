@@ -10,11 +10,10 @@
 		3CBB822828A18AD60008503D /* DrawingDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822728A18AD60008503D /* DrawingDocument.swift */; };
 		3CBB822A28A18B8C0008503D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822928A18B8C0008503D /* CoreDataManager.swift */; };
 		3CBB822C28A18BD10008503D /* DrawingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822B28A18BD10008503D /* DrawingManager.swift */; };
-		3CBB822E28A18C060008503D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822D28A18C060008503D /* ContentView.swift */; };
+		3CBB822E28A18C060008503D /* DrawingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822D28A18C060008503D /* DrawingContentView.swift */; };
 		3CBB823028A18C350008503D /* DrawingWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822F28A18C350008503D /* DrawingWrapper.swift */; };
 		3CBB823228A18C5C0008503D /* AddNewDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB823128A18C5C0008503D /* AddNewDrawing.swift */; };
 		3CBB823428A18CA20008503D /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB823328A18CA20008503D /* DrawingViewController.swift */; };
-		3CBB823628A18F1E0008503D /* PencilkitSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB823528A18F1E0008503D /* PencilkitSwiftUI.swift */; };
 		6D8893AB28A06AD300C4EF8E /* PencilKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88938228A06AD300C4EF8E /* PencilKitViewController.swift */; };
 		6D8893AC28A06AD300C4EF8E /* PencilKitAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88938328A06AD300C4EF8E /* PencilKitAppDelegate.swift */; };
 		6D8893AD28A06AD300C4EF8E /* PencilKitSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88938428A06AD300C4EF8E /* PencilKitSceneDelegate.swift */; };
@@ -54,11 +53,10 @@
 		3CBB822728A18AD60008503D /* DrawingDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingDocument.swift; sourceTree = "<group>"; };
 		3CBB822928A18B8C0008503D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3CBB822B28A18BD10008503D /* DrawingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingManager.swift; sourceTree = "<group>"; };
-		3CBB822D28A18C060008503D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3CBB822D28A18C060008503D /* DrawingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingContentView.swift; sourceTree = "<group>"; };
 		3CBB822F28A18C350008503D /* DrawingWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingWrapper.swift; sourceTree = "<group>"; };
 		3CBB823128A18C5C0008503D /* AddNewDrawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDrawing.swift; sourceTree = "<group>"; };
 		3CBB823328A18CA20008503D /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
-		3CBB823528A18F1E0008503D /* PencilkitSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilkitSwiftUI.swift; sourceTree = "<group>"; };
 		6D88938228A06AD300C4EF8E /* PencilKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PencilKitViewController.swift; sourceTree = "<group>"; };
 		6D88938328A06AD300C4EF8E /* PencilKitAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PencilKitAppDelegate.swift; sourceTree = "<group>"; };
 		6D88938428A06AD300C4EF8E /* PencilKitSceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PencilKitSceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +121,7 @@
 		3CBB822328A18A720008503D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3CBB822D28A18C060008503D /* ContentView.swift */,
+				3CBB822D28A18C060008503D /* DrawingContentView.swift */,
 				3CBB822F28A18C350008503D /* DrawingWrapper.swift */,
 				3CBB823128A18C5C0008503D /* AddNewDrawing.swift */,
 			);
@@ -178,7 +176,6 @@
 		6D88938128A06AD300C4EF8E /* PencilKit */ = {
 			isa = PBXGroup;
 			children = (
-				3CBB823528A18F1E0008503D /* PencilkitSwiftUI.swift */,
 				3CBB822528A18A860008503D /* Models */,
 				3CBB822428A18A7A0008503D /* ViewControllers */,
 				3CBB822328A18A720008503D /* Views */,
@@ -368,14 +365,13 @@
 				6D8893B828A06AD300C4EF8E /* QuoteViewModel.swift in Sources */,
 				6D8893C828A06AD400C4EF8E /* BookError.swift in Sources */,
 				3CBB822C28A18BD10008503D /* DrawingManager.swift in Sources */,
-				3CBB822E28A18C060008503D /* ContentView.swift in Sources */,
+				3CBB822E28A18C060008503D /* DrawingContentView.swift in Sources */,
 				6D8893C428A06AD400C4EF8E /* ContentView.swift in Sources */,
 				6D8893C228A06AD400C4EF8E /* BookRowView.swift in Sources */,
 				6D8893AD28A06AD300C4EF8E /* PencilKitSceneDelegate.swift in Sources */,
 				6D8893BD28A06AD400C4EF8E /* CollectionViewRepresentable.swift in Sources */,
 				6D8893C728A06AD400C4EF8E /* BookCollectionViewController.swift in Sources */,
 				6D8893B128A06AD300C4EF8E /* BookListViewModel.swift in Sources */,
-				3CBB823628A18F1E0008503D /* PencilkitSwiftUI.swift in Sources */,
 				6D8893C928A06AD400C4EF8E /* BookSearchExtension.swift in Sources */,
 				6D8893CA28A06AD400C4EF8E /* UIViewController+Ext.swift in Sources */,
 				6D8893B428A06AD300C4EF8E /* BookDataStore.swift in Sources */,
