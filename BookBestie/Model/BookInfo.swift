@@ -26,6 +26,5 @@ struct BookInfo: Codable {
     struct BookImage: Codable {
         let thumbnail: URL
         
-        
-}
+    }
 }
