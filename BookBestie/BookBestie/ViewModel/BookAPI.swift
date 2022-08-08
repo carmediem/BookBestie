@@ -77,7 +77,7 @@ class BookController {
         //MARK: -- Image URL
         
         static func fetchImage(for book: BookInfo, completion: @escaping (Result<UIImage, BookError>) -> Void) {
-            let imageURL = book.imageLinks.thumbnail
+            guard let imageURL = book.imageLinks?.thumbnail else {return}
 
             URLSession.shared.dataTask(with: imageURL) { data, _, error in
                 if let error = error {

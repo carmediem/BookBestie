@@ -34,10 +34,10 @@ struct BookViewModel {
     }
     
     var author: String {
-        book.authors
+        book.authors?.first ?? "No author found"
     }
     
     var imageLinks: URL? {
-        book.imageLinks.thumbnail
+        book.imageLinks?.thumbnail
     }
 }

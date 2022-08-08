@@ -18,19 +18,19 @@ struct BookDetailView: View {
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: 10) {
-//                Image(book.imageLinks)
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 100, height: 100)
-//                    .padding(.all, 20)
-//
+                Image(book.imageLinks)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 100, height: 100)
+                    .padding(.all, 20)
+
                 Text(book.title)
                     .font(.headline)
                     .fontWeight(.bold)
                     .padding(8)
                     .fixedSize(horizontal: false, vertical: true)
                 
-                Text(book.authors)
+                Text(book.authors?.first ?? "No author found")
                     .fontWeight(.medium)
                     .font(.callout)
                     .foregroundColor(.secondary)
@@ -44,7 +44,7 @@ struct BookDetailView: View {
               
     
                 ScrollView(showsIndicators: false) {
-                  Text(book.description)
+                    Text(book.description ?? "No description found")
                 }
             }
             .frame(width: .infinity, alignment: .leading)
