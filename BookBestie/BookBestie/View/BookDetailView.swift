@@ -18,11 +18,14 @@ struct BookDetailView: View {
     var body: some View {
         VStack {
             VStack(alignment: .center, spacing: 10) {
-                Image(book.imageLinks)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 100, height: 100)
-                    .padding(.all, 20)
+//                ImageView(withURL: book.imageLinks?.thumbnail)
+                
+                
+//                Image(book.imageLinks?.thumbnail)
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 100, height: 100)
+//                    .padding(.all, 20)
 
                 Text(book.title)
                     .font(.headline)

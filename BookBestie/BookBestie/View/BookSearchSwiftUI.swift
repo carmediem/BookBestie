@@ -12,12 +12,10 @@ import SwiftUI
 struct BookSearchSwiftUI: View {
     var body: some View {
         VStack {
-            Text("Hello World!")
             //put UICollectionView here
        
     BookControllerRepresentable()
-            
-            //put QuoteView() here
+    QuoteView()
         }
     }
 }

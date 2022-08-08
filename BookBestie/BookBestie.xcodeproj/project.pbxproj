@@ -39,6 +39,7 @@
 		6D8893C828A06AD400C4EF8E /* BookError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8893A828A06AD300C4EF8E /* BookError.swift */; };
 		6D8893C928A06AD400C4EF8E /* BookSearchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8893A928A06AD300C4EF8E /* BookSearchExtension.swift */; };
 		6D8893CA28A06AD400C4EF8E /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8893AA28A06AD300C4EF8E /* UIViewController+Ext.swift */; };
+		D351BBB328A1875F003E7961 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351BBB228A1875F003E7961 /* ImageLoader.swift */; };
 		D356030A28A09EBE002B4360 /* BookSearchVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356030928A09EBE002B4360 /* BookSearchVIewController.swift */; };
 		D356030C28A0ABBA002B4360 /* BookSearchSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356030B28A0ABBA002B4360 /* BookSearchSwiftUI.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		6D8893A828A06AD300C4EF8E /* BookError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookError.swift; sourceTree = "<group>"; };
 		6D8893A928A06AD300C4EF8E /* BookSearchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSearchExtension.swift; sourceTree = "<group>"; };
 		6D8893AA28A06AD300C4EF8E /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		D351BBB228A1875F003E7961 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		D356030928A09EBE002B4360 /* BookSearchVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchVIewController.swift; sourceTree = "<group>"; };
 		D356030B28A0ABBA002B4360 /* BookSearchSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchSwiftUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,6 +216,7 @@
 		6D8893A728A06AD300C4EF8E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D351BBB228A1875F003E7961 /* ImageLoader.swift */,
 				6D8893A828A06AD300C4EF8E /* BookError.swift */,
 				6D8893A928A06AD300C4EF8E /* BookSearchExtension.swift */,
 				6D8893AA28A06AD300C4EF8E /* UIViewController+Ext.swift */,
@@ -314,6 +317,7 @@
 				6D8893C628A06AD400C4EF8E /* BookBestieApp.swift in Sources */,
 				D356030C28A0ABBA002B4360 /* BookSearchSwiftUI.swift in Sources */,
 				6D8893B228A06AD300C4EF8E /* BookAPI.swift in Sources */,
+				D351BBB328A1875F003E7961 /* ImageLoader.swift in Sources */,
 				6D8893C328A06AD400C4EF8E /* SortView.swift in Sources */,
 				6D8893C028A06AD400C4EF8E /* BookDetailView.swift in Sources */,
 				6D8893B028A06AD300C4EF8E /* FavoriteBookListViewModel.swift in Sources */,
