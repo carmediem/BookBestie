@@ -25,8 +25,7 @@ struct DrawingContentView: View {
             .sheet(isPresented: $addNewShown, content: {
                 AddNewDocument(manager: manager, addShown: $addNewShown)
             })
-            
-            // PlaceholderView()
+        
         }
     }
 }
