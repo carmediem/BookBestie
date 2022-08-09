@@ -14,14 +14,15 @@ class SortViewModel: ObservableObject {
     
     func sortbyTitle() {
         filteredBooks = filteredBooks.sorted {
-            return $0.title < $1.title
+            return $0.title ?? "" < $1.title ?? ""
         }
     }
     
     func sortByAuthor() {
-        filteredBooks = filteredBooks.sorted {
-            return $0.authors < $1.authors
-        }
+        // MARK: FIX ME: This doesn't work the same for an array of authors vs author, singular
+//        filteredBooks = filteredBooks.sorted {
+//            return $0.authors ?? [] < $1.authors ?? []
+//        }
     }
 }
 

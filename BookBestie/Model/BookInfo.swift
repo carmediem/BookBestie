@@ -16,15 +16,14 @@ struct SecondLevelObject: Codable {
 }
 
 struct BookInfo: Codable {
-    let title: String
-    let authors: String
-    let description: String
-    let pageCount: Int
-    let averageRating: Double
-    let imageLinks: BookImage
+    var title: String?
+    var authors: [String]?
+    var description: String?
+    var pageCount: Int?
+    var averageRating: Double?
+    var imageLinks: BookImage?
     
     struct BookImage: Codable {
-        let thumbnail: URL
-        
+        var thumbnail: URL?
     }
 }

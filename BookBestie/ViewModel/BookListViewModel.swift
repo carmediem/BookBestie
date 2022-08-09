@@ -30,14 +30,14 @@ struct BookViewModel {
     let book: BookInfo
     
     var title: String {
-        book.title
+        book.title ?? ""
     }
     
     var author: String {
-        book.authors
+        book.authors?.first ?? ""
     }
     
     var imageLinks: URL? {
-        book.imageLinks.thumbnail
+        book.imageLinks?.thumbnail
     }
 }

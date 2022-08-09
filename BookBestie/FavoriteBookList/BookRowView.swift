@@ -23,12 +23,12 @@ struct BookRowView: View {
 //        .shadow(color: Color.gray.opacity(0.3), radius: 20, x: 0, y: 20)
 
       VStack(alignment: .leading, spacing: 8) {
-        Text(book.title)
+        Text(book.title ?? "")
          // .mainTitle()
           .lineLimit(2)
           .multilineTextAlignment(.leading)
 
-        Text(book.authors)
+          Text(book.authors?.first ?? "")
         //      .secondaryTitle()
           .padding(.bottom, 6)
           
@@ -49,7 +49,7 @@ struct BookRowView: View {
 struct DescriptionView_Previews: PreviewProvider {
   static var previews: some View {
     BookRowView(
-        book: BookInfo(title: "Harry Potter and the Chamber of Secrets", authors: "JK Rowling", description: "Description of the book. This should be a couple of sentences", pageCount: 456, averageRating: 4.1, imageLinks: BookInfo.BookImage(
+        book: BookInfo(title: "Harry Potter and the Chamber of Secrets", authors: ["JK Rowling"], description: "Description of the book. This should be a couple of sentences", pageCount: 456, averageRating: 4.1, imageLinks: BookInfo.BookImage(
             thumbnail:URL(string: "http://books.google.com/books/content?id=XfFvDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")!)))
   }
 }

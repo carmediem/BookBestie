@@ -24,13 +24,13 @@ struct BookDetailView: View {
 //                    .frame(width: 100, height: 100)
 //                    .padding(.all, 20)
 //
-                Text(book.title)
+                Text(book.title ?? "")
                     .font(.headline)
                     .fontWeight(.bold)
                     .padding(8)
                     .fixedSize(horizontal: false, vertical: true)
                 
-                Text(book.authors)
+                Text(book.authors?.first ?? "")
                     .fontWeight(.medium)
                     .font(.callout)
                     .foregroundColor(.secondary)
@@ -44,7 +44,7 @@ struct BookDetailView: View {
               
     
                 ScrollView(showsIndicators: false) {
-                  Text(book.description)
+                  Text(book.description ?? "")
                 }
             }
             .frame(width: .infinity, alignment: .leading)
