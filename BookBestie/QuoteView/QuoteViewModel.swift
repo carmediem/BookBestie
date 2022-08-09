@@ -14,14 +14,14 @@ class QuoteViewModel: ObservableObject {
     
     var quoteContent: String {
         guard let q = quote?.first?.q else {
-            return "N/A"
+            return ""
         }
         return q
     }
     
     var author: String {
         guard let a = quote?.first?.a else {
-            return "N/A"
+            return ""
         }
         return a
     }
