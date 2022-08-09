@@ -25,7 +25,7 @@ struct BookDetailView: View {
 //                    .frame(width: 100, height: 100)
 //                    .padding(.all, 20)
 //
-                Text(book.title ?? "")
+                Text(book.title)
                     .font(.headline)
                     .fontWeight(.bold)
                     .padding(8)
