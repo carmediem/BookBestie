@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DrawingContentView: View {
+    
+    
     @ObservedObject var manager = DrawingManager()
     @State private var addNewShown = false
     
