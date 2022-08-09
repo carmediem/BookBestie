@@ -31,7 +31,7 @@ extension FavBookListView {
 final class ViewModel: ObservableObject {
     @Published var books = [BookInfo]()
     @Published var showingFavs = false
-    @Published var savedBooks: Set<UUID>
+    @Published var savedBooks: Set<String>
     
     #warning("ask Eric abo9ut ")
     var filteredBooks: [BookInfo] {

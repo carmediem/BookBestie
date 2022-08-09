@@ -17,7 +17,7 @@ struct SecondLevelObject: Codable {
 
 }
 
-struct BookInfo: Codable {
+struct BookInfo: Codable, Hashable {
     
     var title: String
     var authors: [String]?
@@ -25,9 +25,9 @@ struct BookInfo: Codable {
     var pageCount: Int?
     var averageRating: Double?
     var imageLinks: BookImage?
-    var id: UUID = UUID()
+    var id: String = UUID().uuidString
     
-    struct BookImage: Codable {
+    struct BookImage: Codable, Hashable {
         var thumbnail: URL?
     }
 }

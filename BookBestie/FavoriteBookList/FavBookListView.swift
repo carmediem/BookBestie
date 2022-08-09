@@ -14,24 +14,24 @@ struct FavBookListView: View {
 
     var body: some View {
       NavigationView {
-  //        Button("Toggle Favorites", action: bookViewModel.sortFavorites)
+      //    Button("Toggle Favorites", action: $bookViewModel.sortFavorites)
   //            .padding()
         List {
-       //    Section(header: SortView(bookListViewModel: BookListView())) {
-//            ForEach(bookViewModel.books, id: \.self) { (book: BookInfo) in
-//
-//            NavigationLink(destination: BookDetailView(book: book)) {
-//              BookRowView(book: book)
-//            }
-//          }
-//          .onDelete(perform: bookViewModel.deleteBook(indexSet:))
+           Section(header: SortView(bookListViewModel: BookListViewModel())) {
+            ForEach(bookViewModel.books, id: \.self) { (book: BookInfo) in
+
+            NavigationLink(destination: BookDetailView(book: book)) {
+              BookRowView(book: book)
+            }
+          }
+          .onDelete(perform: bookViewModel.deleteBook(indexSet:))
         }
         .listStyle(PlainListStyle())
         .navigationTitle("My Favorite Books")
       }
     }
   }
-  //}
+}
 
 
 struct FavBookListView_Previews: PreviewProvider {
