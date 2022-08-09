@@ -18,7 +18,8 @@ struct SecondLevelObject: Codable {
 }
 
 struct BookInfo: Codable {
-    var title: String?
+    
+    var title: String
     var authors: [String]?
     var description: String?
     var pageCount: Int?

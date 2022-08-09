@@ -18,13 +18,13 @@ struct FavBookListView: View {
   //            .padding()
         List {
        //    Section(header: SortView(bookListViewModel: BookListView())) {
-          ForEach($bookViewModel.books) { item in
-
-            NavigationLink(destination: BookDetailView(book: item)) {
-              BookRowView(book: item.wrappedValue)
-            }
-          }
-          .onDelete(perform: bookViewModel.deleteBook(indexSet:))
+//            ForEach(bookViewModel.books, id: \.self) { (book: BookInfo) in
+//
+//            NavigationLink(destination: BookDetailView(book: book)) {
+//              BookRowView(book: book)
+//            }
+//          }
+//          .onDelete(perform: bookViewModel.deleteBook(indexSet:))
         }
         .listStyle(PlainListStyle())
         .navigationTitle("My Favorite Books")
