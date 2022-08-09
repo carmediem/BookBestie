@@ -25,7 +25,7 @@ struct BookInfo: Codable, Hashable {
     var pageCount: Int?
     var averageRating: Double?
     var imageLinks: BookImage?
-    var id: String = UUID().uuidString
+    var id: String? = UUID().uuidString
     
     struct BookImage: Codable, Hashable {
         var thumbnail: URL?

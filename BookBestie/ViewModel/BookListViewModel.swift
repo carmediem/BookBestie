@@ -37,7 +37,7 @@ final class ViewModel: ObservableObject {
     #warning("ask Eric about ")
     var filteredBooks: [BookInfo] {
         if showingFavs {
-            return books.filter { savedBooks.contains($0.id) }
+            return books.filter { savedBooks.contains($0.id ?? "") }
         }
         return books
     }
@@ -53,13 +53,13 @@ final class ViewModel: ObservableObject {
         }
     //}
     func contains(_ book: BookInfo) -> Bool {
-        savedBooks.contains(book.id)
+        savedBooks.contains(book.id ?? "")
     }
     func toggleFav(book: BookInfo) {
         if contains(book) {
-            savedBooks.remove(book.id)
+            savedBooks.remove(book.id ?? "")
         } else {
-            savedBooks.insert(book.id)
+            savedBooks.insert(book.id ?? "")
         }
         favKeyVM.save(items: savedBooks)
     }
