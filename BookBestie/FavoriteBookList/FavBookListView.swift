@@ -9,12 +9,14 @@ import SwiftUI
 import Foundation
 
 struct FavBookListView: View {
-    
+    //all the books added to bookViewModel
     @StateObject private var bookViewModel = BookDataStore()
+    //books that are added to the favorite list by toggleing
+    @StateObject var bookListViewModel = BookListViewModel()
 
     var body: some View {
       NavigationView {
-      //    Button("Toggle Favorites", action: $bookViewModel.sortFavorites)
+        //  Button("Toggle Favorites", action: $bookListViewModel.sortFavs)
   //            .padding()
         List {
            Section(header: SortView(bookListViewModel: BookListViewModel())) {

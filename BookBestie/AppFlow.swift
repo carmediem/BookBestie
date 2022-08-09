@@ -11,7 +11,6 @@ import SwiftUI
 struct AppFlow: View {
     
     var body: some View {
-        LoginView()
         TabView {
             ContentView()
                 .tabItem {
@@ -22,6 +21,7 @@ struct AppFlow: View {
                 .tabItem {
                     Image(systemName: "heart")
                     Text("Fav books")
+                    
                 }
         }    }
 }

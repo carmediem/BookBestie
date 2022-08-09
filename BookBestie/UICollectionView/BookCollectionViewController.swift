@@ -11,14 +11,22 @@
 import SwiftUI
 import UIKit
 
+
 class BookCollectionViewController: UIViewController {
+ 
+//    var completionHandler: ((BookInfo) -> Void)?
+//    init(transitionAction: @escaping (BookInfo) -> Void) {
+//        super.init(nibName: nil, bundle: nil)
+//        self.completionHandler = transitionAction
+//    }
     
+  
     //Collection View of favorite books with a horizontal scroll director
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor(named: "Light")
+//        collectionView.backgroundColor = UIColor(named: "Light")
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,14 +42,25 @@ class BookCollectionViewController: UIViewController {
         return label
     }()
     
-    //Button to navigate to FavBookListView
+    //Button to navigate to FavBookListView. ADD SOME CONSTRAINTS TO THIS
     lazy var button: UIButton = {
         let button = UIButton()
         button.setTitleColor(.black, for: .normal)
         button.setTitle("See All →", for: .normal)
         button.contentHorizontalAlignment = .trailing
         return button
+        
     }()
+    func setupButtons() {
+    button.addTarget(self, action: #selector(transitionButtonTapped(sender:)), for: .touchUpInside)
+    }
+                                                                                
+    @objc func transitionButtonTapped(sender: UIButton) {
+     //   transitionAction()
+        let hostingController = UIHostingController(rootView: FavBookListView())
+        navigationController?.pushViewController(hostingController, animated: true)
+    }
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +71,7 @@ class BookCollectionViewController: UIViewController {
     private func setupView() {
         view.addSubview(label)
         view.addSubview(collectionView)
+        view.addSubview(button)
         
         NSLayoutConstraint.activate( [
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
@@ -82,12 +102,20 @@ extension BookCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-struct BookCollectionViewControllerRepresentable: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> BookCollectionViewController
-    {
-        let bookCollectionVC = BookCollectionViewController()
-        return bookCollectionVC
+
+
+
+//#warning("follow up with Erich")
+//func makeCoordinator() -> Coordinator {
+//    return Coordinator
+//}
+
+
+extension BookCollectionViewController {
+    class Coordinator: NSObject, ObservableObject {
+    //    @ObservedObject var model:
+        
+     //   init(book: BookDataStore)
     }
-    func updateUIViewController(_ uiViewController:
-        BookCollectionViewController, context: Context) {}
 }
+
