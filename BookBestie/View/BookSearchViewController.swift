@@ -69,12 +69,22 @@ class BookSearchViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "bookCell")
-        tableView.allowsSelection = false
+        tableView.isUserInteractionEnabled = true
+        tableView.allowsSelection = true
         stackView.addArrangedSubview(tableView)
     }
 }
+//extension BookSearchViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let book = books[indexPath.row]
+//        let hostingController = UIHostingController(rootView: BookDetailView(book: book))
+//        navigationController?.pushViewController(hostingController, animated: true)
+//        print("To Book Detail")
+//    }
+//}
 
-extension BookSearchViewController: UITableViewDelegate, UITableViewDataSource {
+
+extension BookSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "bookCell")
         let book = books[indexPath.row]
@@ -91,6 +101,13 @@ extension BookSearchViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.detailTextLabel?.text = book.authors?.first }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let book = books[indexPath.row]
+        let hostingController = UIHostingController(rootView: BookDetailView(book: book))
+        navigationController?.pushViewController(hostingController, animated: true)
+        print("To Book Detail")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -125,7 +142,6 @@ extension BookSearchViewController: UISearchBarDelegate {
 struct BookControllerRepresentable: UIViewControllerRepresentable {
   
     
-    
     func makeUIViewController(context: Context) -> BookSearchViewController {
         let bookSearchVC = BookSearchViewController()
 //        bookSearchVC.delegate = context.coordinator
@@ -135,3 +151,10 @@ struct BookControllerRepresentable: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: BookSearchViewController, context: Context) {}
     
 }
+
+//public var publisher = PassThroughSubject(Action, Never>() import Combine
+
+//var transitionAction: () -> Void
+//@objc func transitionButtonTapped(sender: UIButton) {
+//    transitionAction()
+//}

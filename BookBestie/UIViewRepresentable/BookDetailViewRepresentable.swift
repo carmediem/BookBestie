@@ -10,6 +10,8 @@ import SwiftUI
 
 
 struct BookDetailViewRepresentable: UIViewControllerRepresentable {
+    
+    //var transitionAction
 
     var book: BookInfo
     

@@ -38,7 +38,7 @@
 		6D8893BA28A06AD300C4EF8E /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939628A06AD300C4EF8E /* QuoteView.swift */; };
 		6D8893BB28A06AD400C4EF8E /* AppFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939728A06AD300C4EF8E /* AppFlow.swift */; };
 		6D8893BE28A06AD400C4EF8E /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939C28A06AD300C4EF8E /* BookCollectionViewCell.swift */; };
-		6D8893BF28A06AD400C4EF8E /* Login View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939D28A06AD300C4EF8E /* Login View.swift */; };
+		6D8893BF28A06AD400C4EF8E /* Splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939D28A06AD300C4EF8E /* Splashscreen.swift */; };
 		6D8893C028A06AD400C4EF8E /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939E28A06AD300C4EF8E /* BookDetailView.swift */; };
 		6D8893C128A06AD400C4EF8E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D88939F28A06AD300C4EF8E /* CardView.swift */; };
 		6D8893C328A06AD400C4EF8E /* SortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8893A128A06AD300C4EF8E /* SortView.swift */; };
@@ -46,6 +46,8 @@
 		6D8893C828A06AD400C4EF8E /* BookError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8893A828A06AD300C4EF8E /* BookError.swift */; };
 		6D8893C928A06AD400C4EF8E /* BookSearchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8893A928A06AD300C4EF8E /* BookSearchExtension.swift */; };
 		6D8893CA28A06AD400C4EF8E /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8893AA28A06AD300C4EF8E /* UIViewController+Ext.swift */; };
+		D35814C928A2D93100177FBF /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35814C828A2D93100177FBF /* ImageLoader.swift */; };
+		D35814CB28A2E4B500177FBF /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35814CA28A2E4B500177FBF /* TabBar.swift */; };
 		D3B3351428A1E2AD00A9C4A2 /* BookSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3351328A1E2AD00A9C4A2 /* BookSearchViewController.swift */; };
 		D3B3351628A1E2D700A9C4A2 /* BookSearchSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3351528A1E2D700A9C4A2 /* BookSearchSwiftUI.swift */; };
 		D3B3351928A1E5A700A9C4A2 /* BookDetailViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B3351828A1E5A700A9C4A2 /* BookDetailViewRepresentable.swift */; };
@@ -84,7 +86,7 @@
 		6D88939628A06AD300C4EF8E /* QuoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		6D88939728A06AD300C4EF8E /* AppFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlow.swift; sourceTree = "<group>"; };
 		6D88939C28A06AD300C4EF8E /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
-		6D88939D28A06AD300C4EF8E /* Login View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Login View.swift"; sourceTree = "<group>"; };
+		6D88939D28A06AD300C4EF8E /* Splashscreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Splashscreen.swift; sourceTree = "<group>"; };
 		6D88939E28A06AD300C4EF8E /* BookDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		6D88939F28A06AD300C4EF8E /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		6D8893A128A06AD300C4EF8E /* SortView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortView.swift; sourceTree = "<group>"; };
@@ -92,9 +94,12 @@
 		6D8893A828A06AD300C4EF8E /* BookError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookError.swift; sourceTree = "<group>"; };
 		6D8893A928A06AD300C4EF8E /* BookSearchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSearchExtension.swift; sourceTree = "<group>"; };
 		6D8893AA28A06AD300C4EF8E /* UIViewController+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		D35814C828A2D93100177FBF /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		D35814CA28A2E4B500177FBF /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		D3B3351328A1E2AD00A9C4A2 /* BookSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchViewController.swift; sourceTree = "<group>"; };
 		D3B3351528A1E2D700A9C4A2 /* BookSearchSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchSwiftUI.swift; sourceTree = "<group>"; };
 		D3B3351828A1E5A700A9C4A2 /* BookDetailViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewRepresentable.swift; sourceTree = "<group>"; };
+		D3B3351A28A1EF5000A9C4A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +233,7 @@
 		6D88938028A06AD300C4EF8E /* BookBestie */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3351A28A1EF5000A9C4A2 /* Info.plist */,
 				D3B3351728A1E58300A9C4A2 /* UIViewRepresentable */,
 				6D7C291528A18D740086F045 /* BookBestieApp.swift */,
 				6D88939728A06AD300C4EF8E /* AppFlow.swift */,
@@ -291,7 +297,7 @@
 		6D88939A28A06AD300C4EF8E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6D88939D28A06AD300C4EF8E /* Login View.swift */,
+				6D88939D28A06AD300C4EF8E /* Splashscreen.swift */,
 				6D7C290C28A18C3C0086F045 /* ContentView.swift */,
 				D3B3351328A1E2AD00A9C4A2 /* BookSearchViewController.swift */,
 				D3B3351528A1E2D700A9C4A2 /* BookSearchSwiftUI.swift */,
@@ -305,6 +311,8 @@
 				6D8893A828A06AD300C4EF8E /* BookError.swift */,
 				6D8893A928A06AD300C4EF8E /* BookSearchExtension.swift */,
 				6D8893AA28A06AD300C4EF8E /* UIViewController+Ext.swift */,
+				D35814C828A2D93100177FBF /* ImageLoader.swift */,
+				D35814CA28A2E4B500177FBF /* TabBar.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -408,12 +416,13 @@
 				6D8893B728A06AD300C4EF8E /* QuoteAPI.swift in Sources */,
 				28C923F828A09872008415D2 /* BookRowView.swift in Sources */,
 				6D7C290B28A18C2A0086F045 /* FavBookListView.swift in Sources */,
-				6D8893BF28A06AD400C4EF8E /* Login View.swift in Sources */,
+				6D8893BF28A06AD400C4EF8E /* Splashscreen.swift in Sources */,
 				6D7C291028A18C780086F045 /* BookInfo.swift in Sources */,
 				6D8893BB28A06AD400C4EF8E /* AppFlow.swift in Sources */,
 				6D8893BA28A06AD300C4EF8E /* QuoteView.swift in Sources */,
 				6D7C291628A18D740086F045 /* BookBestieApp.swift in Sources */,
 				D3B3351928A1E5A700A9C4A2 /* BookDetailViewRepresentable.swift in Sources */,
+				D35814CB28A2E4B500177FBF /* TabBar.swift in Sources */,
 				6D8893C128A06AD400C4EF8E /* CardView.swift in Sources */,
 				6D8893B828A06AD300C4EF8E /* QuoteViewModel.swift in Sources */,
 				6D7C290D28A18C3C0086F045 /* ContentView.swift in Sources */,
@@ -421,6 +430,7 @@
 				3CBB822C28A18BD10008503D /* DrawingManager.swift in Sources */,
 				3CBB822E28A18C060008503D /* DrawingContentView.swift in Sources */,
 				280EA1E328A1BBBB009D7A94 /* FavKeyViewModel.swift in Sources */,
+				D35814C928A2D93100177FBF /* ImageLoader.swift in Sources */,
 				6D8893C728A06AD400C4EF8E /* BookCollectionViewController.swift in Sources */,
 				285A7B3728A089D200770790 /* Note+CoreDataClass.swift in Sources */,
 				6D8893B128A06AD300C4EF8E /* BookListViewModel.swift in Sources */,
@@ -558,9 +568,9 @@
 				DEVELOPMENT_TEAM = 9YD3W98T26;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookBestie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -587,9 +597,9 @@
 				DEVELOPMENT_TEAM = 9YD3W98T26;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BookBestie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

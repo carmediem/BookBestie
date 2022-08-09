@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  SplashScreen.swift
 //  BookBestie
 //
 //  Created by Carmen Chiu on 8/3/22.
@@ -7,18 +7,25 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct SplashScreen: View {
+    
+    @State var isActive: Bool = false
+    
     var body: some View {
-        NavigationView {
-            ZStack {
+        ZStack {
+            if self.isActive {
+                ContentView()
+                
+            } else {
+                
             Color("background").edgesIgnoringSafeArea(.all)
-            VStack {
+                VStack {
                 Text("Hello BookBestie")
                     . font(.largeTitle)
                     .bold()
                     .padding(.bottom, 40)
             
-            Image("bookbestie8")
+                    Image("bookbestie8")
                     .resizable()
                     .frame(width: 190, height: 190)
                     .padding(.bottom, 45)
@@ -27,25 +34,20 @@ struct LoginView: View {
                     .font(.title3)
                     .bold()
                     .padding(.bottom, 120)
-              //  Spacer()
-                
-                NavigationLink(destination: ContentView()) {
-                    Text("Lets go!")
-                      //  .frame(width: UIScreen.main.bounds.width - 4)
-                        .frame(width: 150, height: 10)
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(.cyan)
-                        .cornerRadius(40)
-                        .font(.title3)
                 }
             }
-        }
+        }.onAppear(perform: splashScreen)
     }
+    func splashScreen() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            withAnimation {
+        self.isActive = true
+            }
+        }
     }
 }
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        SplashScreen()
     }
 }

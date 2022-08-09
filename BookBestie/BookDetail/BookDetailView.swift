@@ -19,12 +19,9 @@ struct BookDetailView: View {
         NavigationView {
         VStack {
             VStack(alignment: .center, spacing: 10) {
-//                Image(book.imageLinks)
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 100, height: 100)
-//                    .padding(.all, 20)
-//
+                
+                ImageView(withURL: book.imageLinks?.thumbnail?.absoluteString ?? "")
+                
                 Text(book.title)
                     .font(.headline)
                     .fontWeight(.bold)
@@ -73,6 +70,6 @@ struct BookDetailView: View {
    
 //struct BookDetailView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        BookDetailView(book: BookInfo())
+//        BookDetailView(book: BookInfo(from: ))
 //    }
 //}
