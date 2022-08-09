@@ -13,7 +13,7 @@ import SwiftUI
 
 struct BookDetailView: View {
     
-   @Binding var book: BookInfo
+   var book: BookInfo
 
     var body: some View {
         NavigationView {
