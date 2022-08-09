@@ -13,9 +13,10 @@ import SwiftUI
 
 struct BookDetailView: View {
     
-   var book: BookInfo
+   @Binding var book: BookInfo
 
     var body: some View {
+        NavigationView {
         VStack {
             VStack(alignment: .center, spacing: 10) {
 //                Image(book.imageLinks)
@@ -51,8 +52,24 @@ struct BookDetailView: View {
             .padding(.all, 18)
         }
     }
+        .toolbar {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                HStack {
+                    NavigationLink {
+                        BookNotesView()
+                    } label: {
+                        Image(systemName: "note.text")
+                    }
+                    NavigationLink {
+                        BookNotesView()
+                    } label: {
+                        Image(systemName: "paintpalette")
+                    }
+                }
+            }
+        }
 }
-    
+}
    
 //struct BookDetailView_Previews: PreviewProvider {
 //    static var previews: some View {

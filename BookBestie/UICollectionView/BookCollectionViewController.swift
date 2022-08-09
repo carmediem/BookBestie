@@ -81,3 +81,13 @@ extension BookCollectionViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: 240, height: 320)
     }
 }
+
+struct BookCollectionViewControllerRepresentable: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> BookCollectionViewController
+    {
+        let bookCollectionVC = BookCollectionViewController()
+        return bookCollectionVC
+    }
+    func updateUIViewController(_ uiViewController:
+        BookCollectionViewController, context: Context) {}
+}

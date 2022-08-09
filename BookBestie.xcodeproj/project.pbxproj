@@ -7,13 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3CBB822828A18AD60008503D /* DrawingDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822728A18AD60008503D /* DrawingDocument.swift */; };
-		3CBB822A28A18B8C0008503D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822928A18B8C0008503D /* CoreDataManager.swift */; };
-		3CBB822C28A18BD10008503D /* DrawingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822B28A18BD10008503D /* DrawingManager.swift */; };
-		3CBB822E28A18C060008503D /* DrawingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822D28A18C060008503D /* DrawingContentView.swift */; };
-		3CBB823028A18C350008503D /* DrawingWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822F28A18C350008503D /* DrawingWrapper.swift */; };
-		3CBB823228A18C5C0008503D /* AddNewDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB823128A18C5C0008503D /* AddNewDrawing.swift */; };
-		3CBB823428A18CA20008503D /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB823328A18CA20008503D /* DrawingViewController.swift */; };
+		280EA1E328A1BBBB009D7A94 /* FavKeyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280EA1E228A1BBBB009D7A94 /* FavKeyViewModel.swift */; };
 		285A7B3528A0894B00770790 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A7B3428A0894B00770790 /* Persistence.swift */; };
 		285A7B3728A089D200770790 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A7B3628A089D200770790 /* Note+CoreDataClass.swift */; };
 		285A7B3928A089EA00770790 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A7B3828A089EA00770790 /* Note+CoreDataProperties.swift */; };
@@ -21,6 +15,13 @@
 		285A7B3E28A08ADF00770790 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A7B3D28A08ADF00770790 /* NoteView.swift */; };
 		285A7B4328A08CF700770790 /* SortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A7B4228A08CF700770790 /* SortViewModel.swift */; };
 		28C923F828A09872008415D2 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C923F728A09872008415D2 /* BookRowView.swift */; };
+		3CBB822828A18AD60008503D /* DrawingDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822728A18AD60008503D /* DrawingDocument.swift */; };
+		3CBB822A28A18B8C0008503D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822928A18B8C0008503D /* CoreDataManager.swift */; };
+		3CBB822C28A18BD10008503D /* DrawingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822B28A18BD10008503D /* DrawingManager.swift */; };
+		3CBB822E28A18C060008503D /* DrawingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822D28A18C060008503D /* DrawingContentView.swift */; };
+		3CBB823028A18C350008503D /* DrawingWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822F28A18C350008503D /* DrawingWrapper.swift */; };
+		3CBB823228A18C5C0008503D /* AddNewDrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB823128A18C5C0008503D /* AddNewDrawing.swift */; };
+		3CBB823428A18CA20008503D /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB823328A18CA20008503D /* DrawingViewController.swift */; };
 		6D7C290B28A18C2A0086F045 /* FavBookListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C290A28A18C2A0086F045 /* FavBookListView.swift */; };
 		6D7C290D28A18C3C0086F045 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C290C28A18C3C0086F045 /* ContentView.swift */; };
 		6D7C291028A18C780086F045 /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7C290F28A18C780086F045 /* BookInfo.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		280EA1E228A1BBBB009D7A94 /* FavKeyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavKeyViewModel.swift; sourceTree = "<group>"; };
 		285A7B3428A0894B00770790 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		285A7B3628A089D200770790 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		285A7B3828A089EA00770790 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				6D8893A128A06AD300C4EF8E /* SortView.swift */,
+				280EA1E228A1BBBB009D7A94 /* FavKeyViewModel.swift */,
 				285A7B4228A08CF700770790 /* SortViewModel.swift */,
 				28C923F728A09872008415D2 /* BookRowView.swift */,
 				6D7C290A28A18C2A0086F045 /* FavBookListView.swift */,
@@ -385,9 +388,7 @@
 			files = (
 				6D8893B328A06AD300C4EF8E /* CoreData.xcdatamodeld in Sources */,
 				6D8893AC28A06AD300C4EF8E /* PencilKitAppDelegate.swift in Sources */,
-				6D8893C628A06AD400C4EF8E /* BookBestieApp.swift in Sources */,
 				3CBB823028A18C350008503D /* DrawingWrapper.swift in Sources */,
-				6D8893B228A06AD300C4EF8E /* BookAPI.swift in Sources */,
 				6D8893C328A06AD400C4EF8E /* SortView.swift in Sources */,
 				6D8893C028A06AD400C4EF8E /* BookDetailView.swift in Sources */,
 				285A7B4328A08CF700770790 /* SortViewModel.swift in Sources */,
@@ -418,9 +419,8 @@
 				6D8893C828A06AD400C4EF8E /* BookError.swift in Sources */,
 				3CBB822C28A18BD10008503D /* DrawingManager.swift in Sources */,
 				3CBB822E28A18C060008503D /* DrawingContentView.swift in Sources */,
-				6D8893C428A06AD400C4EF8E /* ContentView.swift in Sources */,
-				6D8893C228A06AD400C4EF8E /* BookRowView.swift in Sources */,
 				6D8893AD28A06AD300C4EF8E /* PencilKitSceneDelegate.swift in Sources */,
+				280EA1E328A1BBBB009D7A94 /* FavKeyViewModel.swift in Sources */,
 				6D8893C728A06AD400C4EF8E /* BookCollectionViewController.swift in Sources */,
 				285A7B3728A089D200770790 /* Note+CoreDataClass.swift in Sources */,
 				6D8893B128A06AD300C4EF8E /* BookListViewModel.swift in Sources */,

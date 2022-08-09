@@ -8,11 +8,13 @@
 import Foundation
 
 struct TopLevelObject: Codable {
-    let items: [SecondLevelObject]
+    var items: [SecondLevelObject]
+
 }
 
 struct SecondLevelObject: Codable {
-    let volumeInfo: BookInfo
+    var volumeInfo: BookInfo
+
 }
 
 struct BookInfo: Codable {
@@ -22,6 +24,7 @@ struct BookInfo: Codable {
     var pageCount: Int?
     var averageRating: Double?
     var imageLinks: BookImage?
+    var id: UUID = UUID()
     
     struct BookImage: Codable {
         var thumbnail: URL?
