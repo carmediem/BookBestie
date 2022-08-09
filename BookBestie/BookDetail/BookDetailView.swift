@@ -64,6 +64,8 @@ struct BookDetailView: View {
                         BookNotesView()
                     } label: {
                         Image(systemName: "paintpalette")
+                
+                        
                     }
                 }
             }
