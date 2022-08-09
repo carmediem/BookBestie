@@ -14,6 +14,7 @@
 		285A7B3C28A08AB000770790 /* BookNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A7B3B28A08AB000770790 /* BookNotesView.swift */; };
 		285A7B3E28A08ADF00770790 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A7B3D28A08ADF00770790 /* NoteView.swift */; };
 		285A7B4328A08CF700770790 /* SortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285A7B4228A08CF700770790 /* SortViewModel.swift */; };
+		28A7B26328A2E61D005676BA /* UICollectionViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A7B26228A2E61D005676BA /* UICollectionViewRepresentable.swift */; };
 		28C923F828A09872008415D2 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C923F728A09872008415D2 /* BookRowView.swift */; };
 		3CBB822828A18AD60008503D /* DrawingDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822728A18AD60008503D /* DrawingDocument.swift */; };
 		3CBB822A28A18B8C0008503D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB822928A18B8C0008503D /* CoreDataManager.swift */; };
@@ -61,6 +62,7 @@
 		285A7B3B28A08AB000770790 /* BookNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookNotesView.swift; sourceTree = "<group>"; };
 		285A7B3D28A08ADF00770790 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		285A7B4228A08CF700770790 /* SortViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewModel.swift; sourceTree = "<group>"; };
+		28A7B26228A2E61D005676BA /* UICollectionViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewRepresentable.swift; sourceTree = "<group>"; };
 		28C923F728A09872008415D2 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
 		28F4CDE52899A6BB001A00EF /* BookBestie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookBestie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CBB822728A18AD60008503D /* DrawingDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingDocument.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				6D8893A628A06AD300C4EF8E /* BookCollectionViewController.swift */,
+				28A7B26228A2E61D005676BA /* UICollectionViewRepresentable.swift */,
 				6D88939C28A06AD300C4EF8E /* BookCollectionViewCell.swift */,
 				6D88939F28A06AD300C4EF8E /* CardView.swift */,
 			);
@@ -401,6 +404,7 @@
 				6D8893C028A06AD400C4EF8E /* BookDetailView.swift in Sources */,
 				285A7B4328A08CF700770790 /* SortViewModel.swift in Sources */,
 				D3B3351628A1E2D700A9C4A2 /* BookSearchSwiftUI.swift in Sources */,
+				28A7B26328A2E61D005676BA /* UICollectionViewRepresentable.swift in Sources */,
 				6D8893B928A06AD300C4EF8E /* Quote.swift in Sources */,
 				3CBB822828A18AD60008503D /* DrawingDocument.swift in Sources */,
 				285A7B3928A089EA00770790 /* Note+CoreDataProperties.swift in Sources */,

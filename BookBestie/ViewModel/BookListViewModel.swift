@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class BookListViewModel: ObservableObject {
     
@@ -22,7 +23,7 @@ func sortbyTitle() {
 
 //func sortByAuthor() {
 //    filteredBooks = filteredBooks.sorted {
-//        return $0.author < $1.author
+//        return $0.authors < $1.authors
 //    }
 //}
 }
@@ -33,7 +34,7 @@ final class ViewModel: ObservableObject {
     @Published var showingFavs = false
     @Published var savedBooks: Set<String>
     
-    #warning("ask Eric abo9ut ")
+    #warning("ask Eric about ")
     var filteredBooks: [BookInfo] {
         if showingFavs {
             return books.filter { savedBooks.contains($0.id ?? "") }
@@ -47,8 +48,8 @@ final class ViewModel: ObservableObject {
      //   self.books = BookInfo.init(id: UUID, title: "Harry Potter", author: "JK Roling", coverArt: "", description: "book description", isFavorited: false)
     }
     func sortFavs() {
-    //    withAnimation() {
-            showingFavs.toggle()
+    //    withAnimation(showingFavs.toggle()) {
+          showingFavs.toggle()
         }
     //}
     func contains(_ book: BookInfo) -> Bool {
@@ -70,7 +71,7 @@ struct BookViewModel {
     let book: BookInfo
     
     var title: String {
-        book.title ?? ""
+        book.title
     }
     
     var author: String {

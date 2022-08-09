@@ -14,6 +14,24 @@ struct ContentView: View {
     }
 }
 
+//Empty view when a new user opens the app and hasnt listed any favorite books yet. Will have the inspiration or book quote under this.
+//This will be moved over to the UISearchBarView
+struct EmptyView: View {
+    var body: some View {
+        VStack {
+            Spacer()
+            Image(systemName: "books.vertical")
+                .font(.system(size: 85))
+                .padding(.bottom)
+            Text("Find your next favorite book")
+                .font(.title)
+            Spacer()
+        }
+        .padding()
+        .foregroundColor(Color(.systemCyan))
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
