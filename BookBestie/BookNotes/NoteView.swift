@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NoteView: View {
     @Environment(\.managedObjectContext) var viewContext
-    @ObservedObject var note: Note
+   @ObservedObject var note: Note
     
     @State private var noteContent: String = ""
     
@@ -25,7 +25,12 @@ struct NoteView: View {
                 .toolbar {
                     Button("Save") {
                         note.content = noteContent
-                        try? viewContext.save()
+                        do {
+                            try viewContext.save()
+                        } catch {
+                            print("error saving note content \(error)")
+                            
+                        }
                     }
                 }
         }

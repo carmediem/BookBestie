@@ -61,7 +61,7 @@ struct BookDetailView: View {
                         Image(systemName: "note.text")
                     }
                     NavigationLink {
-                        BookNotesView()
+                        DrawingContentView()
                     } label: {
                         Image(systemName: "paintpalette")
                 

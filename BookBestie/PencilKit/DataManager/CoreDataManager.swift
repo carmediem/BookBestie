@@ -12,15 +12,7 @@ class CoreDataManager {
     
     private init() {}
     
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "DrawingDocModel")
-        container.loadPersistentStores { (storeDesc, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        }
-        return container
-    }()
+    let persistentContainer = PersistenceController.shared.container
     
     func saveContext() {
         let context = persistentContainer.viewContext
@@ -35,7 +27,7 @@ class CoreDataManager {
     }
     
     func addData(doc: DrawingDocument) {
-        let drawing = DrawingDoc(context: persistentContainer.viewContext)
+        let drawing = DrawingDoc(entity: DrawingDoc.entity(), insertInto: persistentContainer.viewContext)
         drawing.data = doc.data
         drawing.id = doc.id
         drawing.name = doc.name

@@ -23,6 +23,12 @@ struct BookNotesView: View {
             List {
                 ForEach(notes) { note in
                     NavigationLink(note.title ?? "" , destination: NoteView(note: note))
+
+                //    ForEach(manager.docs) { doc in
+                //    NavigationLink(destination: DrawingWrapper(manager: manager, id: doc.id)
+                    
+                    
+                    
                 }
                 .onDelete { indexSet in
                     guard let index = indexSet.first else { return }
@@ -53,7 +59,8 @@ struct BookNotesView: View {
                     
                     Section {
                         Button("Save") {
-                            let note = Note(context: viewContext)
+                            
+                            let note = Note(entity: Note.entity(), insertInto: viewContext)
                             note.id = UUID()
                             note.title = newNoteTitle
                             note.content = newNoteContent
@@ -82,3 +89,4 @@ struct BookNotesView_Previews: PreviewProvider {
         BookNotesView()
     }
 }
+
