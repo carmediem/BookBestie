@@ -17,6 +17,8 @@ struct BookDetailView: View {
 
     var body: some View {
         NavigationView {
+            ZStack {
+                Color("background4").edgesIgnoringSafeArea(.all)
         VStack {
             VStack(alignment: .center, spacing: 10) {
                 
@@ -45,10 +47,11 @@ struct BookDetailView: View {
                   Text(book.description ?? "")
                 }
             }
-            .frame(width: .infinity, alignment: .leading)
+            .frame(width: 340, alignment: .leading)
             .padding(.all, 18)
         }
     }
+        }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 HStack {

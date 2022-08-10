@@ -18,7 +18,7 @@ struct SplashScreen: View {
                 
             } else {
                 
-            Color("background").edgesIgnoringSafeArea(.all)
+            Color("background4").edgesIgnoringSafeArea(.all)
                 VStack {
                 Text("Hello BookBestie")
                     . font(.largeTitle)

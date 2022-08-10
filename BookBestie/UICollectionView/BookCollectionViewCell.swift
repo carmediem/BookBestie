@@ -15,7 +15,7 @@ class BookCollectionViewCell: UICollectionViewCell {
     static var reuseIdentifier = "BookCollectionViewCell"
     
     lazy var host: UIHostingController = {
-        return UIHostingController(rootView: Card())
+        return UIHostingController(rootView: Card(book: BookInfo.init(title: "")))
     }()
     
     override init(frame: CGRect) {

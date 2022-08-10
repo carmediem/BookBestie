@@ -26,7 +26,8 @@ class BookCollectionViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-//        collectionView.backgroundColor = UIColor(named: "Light")
+        collectionView.showsHorizontalScrollIndicator = false
+
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,7 +45,7 @@ class BookCollectionViewController: UIViewController {
     
     //Button to navigate to FavBookListView. ADD SOME CONSTRAINTS TO THIS
     lazy var button: UIButton = {
-        let button = UIButton()
+        let button = UIButton(frame: CGRect(x: 50, y: 50, width: 100, height: 100))
         button.setTitleColor(.black, for: .normal)
         button.setTitle("See All →", for: .normal)
         button.contentHorizontalAlignment = .trailing
@@ -57,8 +58,9 @@ class BookCollectionViewController: UIViewController {
                                                                                 
     @objc func transitionButtonTapped(sender: UIButton) {
      //   transitionAction()
-        let hostingController = UIHostingController(rootView: FavBookListView())
-        navigationController?.pushViewController(hostingController, animated: true)
+        print("button tapped")
+//        let hostingController = UIHostingController(rootView: FavBookListView())
+//        navigationController?.pushViewController(hostingController, animated: true)
     }
   
     
@@ -69,17 +71,22 @@ class BookCollectionViewController: UIViewController {
     }
     
     private func setupView() {
-        view.addSubview(label)
-        view.addSubview(collectionView)
+//        view.addSubview(label)
+//        view.addSubview(collectionView)
         view.addSubview(button)
+        button.isUserInteractionEnabled = true
         
+        #warning("button isnt showing up")
         NSLayoutConstraint.activate( [
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            label.heightAnchor.constraint(equalToConstant: 24),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 16),
-            collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 16),
-            collectionView.heightAnchor.constraint(equalToConstant: 320)
+//            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+//            label.heightAnchor.constraint(equalToConstant: 24),
+//            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+//            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+//            collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 16),
+//            collectionView.heightAnchor.constraint(equalToConstant: 320),
+            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            button.heightAnchor.constraint(equalToConstant: 18),
+        
         ])
     }
 }

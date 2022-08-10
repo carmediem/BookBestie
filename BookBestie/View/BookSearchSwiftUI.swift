@@ -13,7 +13,8 @@ struct BookSearchSwiftUI: View {
             //put UICollectionView here
        
     BookControllerRepresentable()
-    QuoteView()
+    BookCollectionViewControllerRepresentable()
+            QuoteView()
         }
     }
 }
