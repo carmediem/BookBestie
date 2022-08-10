@@ -9,11 +9,12 @@ import SwiftUI
 
 struct BookSearchSwiftUI: View {
     var body: some View {
-        VStack {
-            //put UICollectionView here
-       
+    VStack {
+          
     BookControllerRepresentable()
     QuoteView()
+    BookCollectionViewControllerRepresentable()
+
         }
     }
 }

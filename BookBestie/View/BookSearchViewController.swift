@@ -74,15 +74,6 @@ class BookSearchViewController: UIViewController {
         stackView.addArrangedSubview(tableView)
     }
 }
-//extension BookSearchViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let book = books[indexPath.row]
-//        let hostingController = UIHostingController(rootView: BookDetailView(book: book))
-//        navigationController?.pushViewController(hostingController, animated: true)
-//        print("To Book Detail")
-//    }
-//}
-
 
 extension BookSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -106,8 +97,9 @@ extension BookSearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let book = books[indexPath.row]
         let hostingController = UIHostingController(rootView: BookDetailView(book: book))
-        navigationController?.pushViewController(hostingController, animated: true)
-        print("To Book Detail")
+        show(hostingController, sender: self)
+//        navigationController?.pushViewController(hostingController, animated: true)
+//        print("To Book Detail")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

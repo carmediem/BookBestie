@@ -16,4 +16,3 @@ struct BookCollectionViewControllerRepresentable: UIViewControllerRepresentable 
     func updateUIViewController(_ uiViewController:
         BookCollectionViewController, context: Context) {}
 }
-
