@@ -15,11 +15,10 @@ struct QuoteView: View {
             Text("\(self.vm.quoteContent)")
                 .italic()
                 .font(.subheadline)
+                .foregroundColor(.gray)
             Text("\(self.vm.author)")
                 .font(.subheadline)
-            
-                
-                
+                .foregroundColor(.gray)
             }
         .padding()
         .onAppear() {

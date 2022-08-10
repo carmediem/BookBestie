@@ -12,12 +12,13 @@ import SwiftUI
 struct BookRowView: View {
 
   var book: BookInfo
+
     @EnvironmentObject var bookListViewModel: BookListViewModel
 
   var body: some View {
     HStack {
         ImageView(withURL: book.imageLinks?.thumbnail?.absoluteString ?? "")
-    
+
       VStack(alignment: .leading, spacing: 8) {
         Text(book.title)
          // .mainTitle()
@@ -28,6 +29,7 @@ struct BookRowView: View {
         //      .secondaryTitle()
           .padding(.bottom, 6)
           
+
       } .frame(width: 150, height: 70, alignment: .leading)
         
         HStack {
