@@ -14,8 +14,8 @@ struct BookBestieApp: App {
             AppFlow()
 
                 .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-                
 
+                .environmentObject(BookListViewModel())
 //            BookSearchSwiftUI()
 
         }

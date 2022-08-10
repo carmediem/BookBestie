@@ -12,14 +12,15 @@ import SwiftUI
 struct BookRowView: View {
 
   var book: BookInfo
-    var vm = FavBookListView()
+
+    @EnvironmentObject var bookListViewModel: BookListViewModel
 
   var body: some View {
     HStack {
         ImageView(withURL: book.imageLinks?.thumbnail?.absoluteString ?? "")
 
       VStack(alignment: .leading, spacing: 8) {
-        Text(book.title ?? "")
+        Text(book.title)
          // .mainTitle()
           .lineLimit(2)
           .multilineTextAlignment(.leading)
@@ -28,25 +29,22 @@ struct BookRowView: View {
         //      .secondaryTitle()
           .padding(.bottom, 6)
           
-      } .frame(width: 200, height: 70, alignment: .leading)
+
+      } .frame(width: 150, height: 70, alignment: .leading)
         
         HStack {
-                    Image(systemName: vm.contains(book) ? "heart.fill" : "heart")
-                        .foregroundColor(.red)
-                        .onTapGesture {
-
-                        vm.toggleFav(book: book)
-                        }
-                }
-
-        HStack {
-          Image(systemName: "heart")
+            Image(systemName: bookListViewModel.contains(book) ? "heart.fill" : "heart")
                 .foregroundColor(.red)
+                .onTapGesture {
+               //     bookListViewModel.saveFavBook
+                    
+                bookListViewModel.toggleFav(book: book)
+                }
         }
         .foregroundColor(.secondary)
         .font(.system(size: 30, weight: .medium))
     
-      .frame(width: 50, height: 70, alignment: .leading)
+      .frame(width: 30, height: 50, alignment: .leading)
     }
   }
 }

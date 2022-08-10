@@ -11,6 +11,7 @@ import CoreData
 struct BookNotesView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
+    #warning("THIS IS HOW WE FETCH ALL OUR FAVORITE BOOK. INSTEAD OF NOTE, CDFAVBOOk. It this doesnt work, add the cdFavBook.entity. DO THIS ON THE FAVBOOKLISTVIEW. DO A LIST FOR EACH FAVBOOK. DO THIS INSTEAD OF THE INIT ON VIEWMODEL")
     @FetchRequest(sortDescriptors: [], predicate: nil, animation: .linear)
     var notes: FetchedResults<Note>
     
@@ -20,6 +21,8 @@ struct BookNotesView: View {
     
     var body: some View {
         NavigationView {
+            ZStack {
+                Color("background4").edgesIgnoringSafeArea(.all)
             List {
                 ForEach(notes) { note in
                     NavigationLink(note.title ?? "" , destination: NoteView(note: note))
@@ -37,7 +40,7 @@ struct BookNotesView: View {
                 }
                 
             }
-        
+            }
         .navigationTitle("Book Notes")
         .toolbar {
             ToolbarItem {
