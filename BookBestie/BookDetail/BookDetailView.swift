@@ -13,6 +13,7 @@ struct BookDetailView: View {
     @State var book: BookInfo?
     var favoriteBook: CDFavoriteBook?
     
+    
     // MARK: Wherever you exit this view from, put this line of code:
     // model.selectedBook = nil
     
@@ -23,12 +24,17 @@ struct BookDetailView: View {
                 VStack {
                     VStack(alignment: .center, spacing: 10) {
                         HStack {
+                            Button {
+                                vm.selectedBook = nil
+                            } label : {
+                                Text("Back to Search")
+                            }
                             Spacer()
-                            
                             Image(systemName: vm.contains(book) ? "heart.fill" : "heart")
                                 .foregroundColor(.red)
                                 .onTapGesture {
                                     vm.toggleFav(book: book)
+
                                 }
                             .foregroundColor(.secondary)
                             .font(.system(size: 30, weight: .medium))
