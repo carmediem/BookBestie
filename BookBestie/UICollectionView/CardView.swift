@@ -23,21 +23,19 @@ struct Card: View {
     
     var book: BookInfo
     
- 
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             
-     ImageView(withURL: book.imageLinks?.thumbnail?.absoluteString ?? "")
-           // Image("bookbestie")
+//     ImageView(withURL: book.imageLinks?.thumbnail?.absoluteString ?? "")
+            Image("bookbestie")
                 .scaledToFit()
                 .clipShape(RoundedRectangle(cornerRadius: 4))
-         //  Text("Harry Potter")
-          Text(book.title)
+           Text("Harry Potter")
+//          Text(book.title)
                 .font(.headline)
 
-        //  Text("JK Rowling")
-        Text(book.authors?.first ?? "")
+          Text("JK Rowling")
+//        Text(book.authors?.first ?? "")
                 .font(.body)
         }
     }

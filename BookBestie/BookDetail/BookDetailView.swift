@@ -18,7 +18,7 @@ struct BookDetailView: View {
     // model.selectedBook = nil
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ZStack {
                 Color("background4").edgesIgnoringSafeArea(.all)
                 VStack {
@@ -69,7 +69,7 @@ struct BookDetailView: View {
                     .padding(.all, 18)
                 }
             }
-        }
+//        }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 HStack {

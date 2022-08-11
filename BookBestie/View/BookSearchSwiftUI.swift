@@ -18,7 +18,7 @@ struct BookSearchSwiftUI: View {
                 BookControllerRepresentable()
                 Divider()
                 BookCollectionViewControllerRepresentable()
-                    .frame(height: 100)
+//                    .frame(height: 100)
 
             }
         }

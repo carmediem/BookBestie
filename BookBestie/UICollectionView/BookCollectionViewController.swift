@@ -40,17 +40,17 @@ class BookCollectionViewController: UIViewController {
         return label
     }()
     
-    lazy var button: UIButton = {
-        let button = UIButton(frame: CGRect(x: 260, y: -35, width: 100, height: 100))
-        button.setTitleColor(.black, for: .normal)
-        button.setTitle("See All →", for: .normal)
-        button.contentHorizontalAlignment = .trailing
-        return button
-    }()
+//    lazy var button: UIButton = {
+//        let button = UIButton(frame: CGRect(x: 260, y: -35, width: 100, height: 100))
+//        button.setTitleColor(.black, for: .normal)
+//        button.setTitle("See All →", for: .normal)
+//        button.contentHorizontalAlignment = .trailing
+//        return button
+//    }()
     
-    func setupButtons() {
-        button.addTarget(self, action: #selector(transitionButtonTapped(sender:)), for: .touchUpInside)
-    }
+//    func setupButtons() {
+//        button.addTarget(self, action: #selector(transitionButtonTapped(sender:)), for: .touchUpInside)
+//    }
                                                                                 
     @objc func transitionButtonTapped(sender: UIButton) {
         // Need to use Combine to move to the SwiftUI view with the environment object
@@ -67,9 +67,9 @@ class BookCollectionViewController: UIViewController {
     private func setupView() {
         view.addSubview(label)
         view.addSubview(collectionView)
-        view.addSubview(button)
-        button.isUserInteractionEnabled = true
-        setupButtons()
+//        view.addSubview(button)
+//        button.isUserInteractionEnabled = true
+//        setupButtons()
         
         NSLayoutConstraint.activate( [
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
@@ -78,8 +78,8 @@ class BookCollectionViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 16),
             collectionView.heightAnchor.constraint(equalToConstant: 320),
-            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 120),
-            button.heightAnchor.constraint(equalToConstant: 40),
+//            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 120),
+//            button.heightAnchor.constraint(equalToConstant: 40),
         
         ])
     }
