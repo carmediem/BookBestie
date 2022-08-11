@@ -30,13 +30,14 @@ struct FavBookListView: View {
                             ForEach(bookViewModel.books, id: \.self) { book in
                                 
                                 NavigationLink(destination: BookDetailView(book: book)) {
-                                    BookRowView(book: book)
+                    //                BookRowView(book: book)
                                 }
                             }
                             .onDelete(perform: bookViewModel.deleteBook(indexSet:))
                         } else {
                             ForEach(favBooks, id: \.self) { favBook in
                                 // MARK: You need to make this display whatever info you want now, instead of just a title. BookDetailView has a book property, that is a BookInfo. NOT a CDFavoriteBook. You must convert the CDFavoriteBook --> BookInfo
+                                
                                    NavigationLink(destination: BookDetailView(book: nil, favoriteBook: favBook)) {
                                 Text(favBook.cdTitle ?? "Nothing here")
                                 
@@ -45,7 +46,6 @@ struct FavBookListView: View {
                                       }
                             }
                             .onDelete { indexSet in
-                                //need to pass a book or book id here.
                                 for index in indexSet {
                                     let favBook = favBooks[index]
                                     bookListViewModel.deleteNewFavBook(bookTitle: favBook.cdTitle ?? "")
