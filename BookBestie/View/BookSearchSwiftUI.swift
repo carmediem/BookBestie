@@ -14,10 +14,13 @@ struct BookSearchSwiftUI: View {
             if model.selectedBook != nil {
                 BookDetailView(book: model.selectedBook)
             } else {
+                QuoteView()
                 BookControllerRepresentable()
+                Divider()
+                BookCollectionViewControllerRepresentable()
+                    .frame(height: 100)
+
             }
-            BookCollectionViewControllerRepresentable()
-            QuoteView()
         }
     }
 }

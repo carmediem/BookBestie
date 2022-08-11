@@ -9,10 +9,15 @@
 //THIS IS THE UICOLLECTIONVIEW THAT WILL BE ON THE CONTENT PAGE UNDER THE SEARCH BAR
 
 import SwiftUI
-import UIKit
-
+import Combine
 
 class BookCollectionViewController: UIViewController {
+    // We need a publisher. A publisher takes values and sends it out to receivers, who are choosing to listen.
+    enum Action {
+        case transition
+    }
+    
+    public var publisher = PassthroughSubject<Action, Never>()
 
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -40,25 +45,18 @@ class BookCollectionViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         button.setTitle("See All →", for: .normal)
         button.contentHorizontalAlignment = .trailing
-        
-       
-        
         return button
     }()
     
-    
     func setupButtons() {
-    button.addTarget(self, action: #selector(transitionButtonTapped(sender:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(transitionButtonTapped(sender:)), for: .touchUpInside)
     }
                                                                                 
     @objc func transitionButtonTapped(sender: UIButton) {
-       // transitionAction()
-        
+        // Need to use Combine to move to the SwiftUI view with the environment object
         print("button tapped")
-        let hostingController = UIHostingController(rootView: FavBookListView())
-        show(hostingController, sender: self)
+        publisher.send(.transition)
     }
-  
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct BookDetailView: View {
+    @EnvironmentObject private var vm: BookListViewModel
     
     @State var book: BookInfo?
     var favoriteBook: CDFavoriteBook?
     
-
-    @EnvironmentObject private var vm: BookListViewModel
-
+    // MARK: Wherever you exit this view from, put this line of code:
+    // model.selectedBook = nil
     
     var body: some View {
         NavigationView {
@@ -76,8 +76,6 @@ struct BookDetailView: View {
                         DrawingContentView()
                     } label: {
                         Image(systemName: "paintpalette")
-                        
-                        
                     }
                 }
             }
