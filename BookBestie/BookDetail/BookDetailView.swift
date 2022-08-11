@@ -10,10 +10,11 @@ import SwiftUI
 struct BookDetailView: View {
     
     @State var book: BookInfo?
-    
     var favoriteBook: CDFavoriteBook?
     
-    
+
+    @EnvironmentObject private var vm: BookListViewModel
+
     
     var body: some View {
         NavigationView {
@@ -21,6 +22,18 @@ struct BookDetailView: View {
                 Color("background4").edgesIgnoringSafeArea(.all)
                 VStack {
                     VStack(alignment: .center, spacing: 10) {
+                        HStack {
+                            Spacer()
+                            
+                            Image(systemName: vm.contains(book) ? "heart.fill" : "heart")
+                                .foregroundColor(.red)
+                                .onTapGesture {
+                                    vm.toggleFav(book: book)
+                                }
+                            .foregroundColor(.secondary)
+                            .font(.system(size: 30, weight: .medium))
+                            
+                        }.padding(40)
                         
                         ImageView(withURL: book?.imageLinks?.thumbnail?.absoluteString ?? "")
                         
@@ -41,7 +54,6 @@ struct BookDetailView: View {
                     VStack(alignment: .leading, spacing: 16) {
                         Text("Description")
                             .fontWeight(.bold)
-                        
                         
                         ScrollView(showsIndicators: false) {
                             Text(book?.description ?? "")
@@ -70,6 +82,7 @@ struct BookDetailView: View {
                 }
             }
         }
+        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
         .onAppear {
             // MARK: Create, and set the book info here. Try doing this in the BookRowView as the last step. Then, you can use the BookRowView instead of just text, in the list of favorites.
        //     BookRowView(book: CDFavoriteBook)

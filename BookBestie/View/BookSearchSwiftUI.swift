@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct BookSearchSwiftUI: View {
+    @EnvironmentObject private var model: BookListViewModel
     var body: some View {
-    VStack {
-          
-    BookControllerRepresentable()
-    QuoteView()
-    BookCollectionViewControllerRepresentable()
-
+        VStack {
+            if model.selectedBook != nil {
+                BookDetailView(book: model.selectedBook)
+            } else {
+                BookControllerRepresentable()
+            }
+            BookCollectionViewControllerRepresentable()
+            QuoteView()
         }
     }
 }
