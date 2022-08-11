@@ -7,10 +7,24 @@
 
 import SwiftUI
 
+protocol CardContent {
+    var title: String { get }
+    var authors: [String] { get }
+    var imageLinks: URL { get }
+}
+
 struct Card: View {
+    #warning("added in protocol CardContent and type alias")
+    
+    typealias Content = CardContent
+    
+    let content = Content.self
+  
     
     var book: BookInfo
-    #warning("ask erich if we need actual books in our favlistbookview ")
+    
+ 
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             

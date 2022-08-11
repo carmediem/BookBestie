@@ -50,10 +50,10 @@ class BookCollectionViewController: UIViewController {
         button.setTitle("See All →", for: .normal)
         button.contentHorizontalAlignment = .trailing
         
-        #warning("FOLLOW UP WITH ERICH. Button still doesnt work")
+        #warning("Button still doesnt work")
         let hostingController = UIHostingController(rootView: FavBookListView())
         show(hostingController, sender: self)
-    //    self.navigationController?.pushViewController(hostingController, animated: true)
+        self.navigationController?.pushViewController(hostingController, animated: true)
         
         return button
     }()
@@ -105,6 +105,9 @@ extension BookCollectionViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as? BookCollectionViewCell else {
             fatalError("There was an error dequeing the cell")
         }
+        
+        #warning("added the embed in")
+        cell.embed(in: self)
         return cell
     }
 }

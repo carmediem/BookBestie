@@ -12,8 +12,10 @@ struct SortView: View {
 
     var body: some View {
         
-        HStack(alignment: .center, spacing: 20) {
+        HStack {
             Text("Sort By")
+                .fontWeight(.regular)
+            
             Button {
                 bookListViewModel.sortbyTitle()
             } label: {
@@ -25,13 +27,14 @@ struct SortView: View {
             } label: {
                 Text("Author")
             }.buttonStyle(.bordered)
+
             
             Button(action: {
                 bookListViewModel.sortFavs()
             }, label: {
                 Image(systemName: "heart.fill")
             })
-            .padding()
+            .padding(10)
         }
     }
 }
