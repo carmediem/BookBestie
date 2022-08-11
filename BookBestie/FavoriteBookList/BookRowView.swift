@@ -4,20 +4,37 @@
 //
 //  Created by Carmen Chiu on 8/7/22.
 //
-//MARK: -- THIS IS WHAT EACH ROW OF THE SEARCH RESULT SHOULD DISPLAY AS- book thumbnail, title, author, and a heart.
-//TBD- if the heart button is tapped, it will add it to the favorites list. Otherwise, can add a button to add to favoriteBooKList
 
 import SwiftUI
 
 struct BookRowView: View {
+    
+    var book: BookInfo
+    @State var cdFavoriteBook = CDFavoriteBook()
 
-  var book: BookInfo
-
-    @EnvironmentObject var bookListViewModel: BookListViewModel
+      @EnvironmentObject var bookListViewModel: BookListViewModel
+    
+    func favoriteBooks() {
+     //   guard let favoriteBooks = cdFavoriteBook else { return }
+        cdTitleText = cdFavoriteBook.cdTitle ?? ""
+        cdAuthorText = cdFavoriteBook.cdAuthor ?? ""
+        cdDescriptionText = cdFavoriteBook.cdDescription ?? ""
+    }
+    
+   @State var cdAuthorText: String
+  //  @State var cdAverageRatingText: Double
+    @State var cdDescriptionText: String
+  //  @State var cdIDText: UUID
+    @State var cdImage: URL
+//    @State var cdPageCountText: Int
+    @State var cdTitleText: String
+  //  @State var isFavorited: Bool = false
+    
+    
 
   var body: some View {
     HStack {
-        ImageView(withURL: book.imageLinks?.thumbnail?.absoluteString ?? "")
+    ImageView(withURL: book.imageLinks?.thumbnail?.absoluteString ?? "")
 
       VStack(alignment: .leading, spacing: 8) {
         Text(book.title)
@@ -47,10 +64,10 @@ struct BookRowView: View {
   }
 }
 
-struct DescriptionView_Previews: PreviewProvider {
-  static var previews: some View {
-    BookRowView(
-        book: BookInfo(title: "Harry Potter and the Chamber of Secrets", authors: ["JK Rowling"], description: "Description of the book. This should be a couple of sentences", pageCount: 456, averageRating: 4.1, imageLinks: BookInfo.BookImage(
-            thumbnail:URL(string: "http://books.google.com/books/content?id=XfFvDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")!)))
-  }
-}
+//struct DescriptionView_Previews: PreviewProvider {
+//  static var previews: some View {
+//    BookRowView(
+//        book: BookInfo(title: "Harry Potter and the Chamber of Secrets", authors: ["JK Rowling"], description: "Description of the book. This should be a couple of sentences", pageCount: 456, averageRating: 4.1, imageLinks: BookInfo.BookImage(
+//            thumbnail:URL(string: "http://books.google.com/books/content?id=XfFvDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api")!)))
+//  }
+//}

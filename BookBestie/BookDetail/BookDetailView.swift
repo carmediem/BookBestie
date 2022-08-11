@@ -5,10 +5,6 @@
 //  Created by Carmen Chiu on 8/3/22.
 //
 
-//MARK: -- This is the view where the user can click into to see additional details of the book. The user will navigate to this page view after they click on the search result.
-//navigation link from search result text field to this view.
-//The favorite button can be here. Clicking it will add it to the favorite list
-
 import SwiftUI
 
 struct BookDetailView: View {
@@ -16,6 +12,8 @@ struct BookDetailView: View {
     @State var book: BookInfo?
     
     var favoriteBook: CDFavoriteBook?
+    
+    
     
     var body: some View {
         NavigationView {
@@ -74,6 +72,8 @@ struct BookDetailView: View {
         }
         .onAppear {
             // MARK: Create, and set the book info here. Try doing this in the BookRowView as the last step. Then, you can use the BookRowView instead of just text, in the list of favorites.
+       //     BookRowView(book: CDFavoriteBook)
+         
             if let favoriteBook = favoriteBook {
                 let currentBook = BookInfo.make(from: favoriteBook)
                 self.book = currentBook
