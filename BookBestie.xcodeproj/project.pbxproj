@@ -119,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				6D88938B28A06AD300C4EF8E /* BookBestie.xcdatamodeld */,
+				3CBB822928A18B8C0008503D /* CoreDataManager.swift */,
 				285A7B3428A0894B00770790 /* Persistence.swift */,
 			);
 			path = CoreData;
@@ -211,7 +212,6 @@
 		3CBB822628A18A910008503D /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				3CBB822928A18B8C0008503D /* CoreDataManager.swift */,
 				3CBB822B28A18BD10008503D /* DrawingManager.swift */,
 			);
 			path = DataManager;

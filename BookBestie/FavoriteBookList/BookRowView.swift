@@ -36,9 +36,7 @@ struct BookRowView: View {
             Image(systemName: bookListViewModel.contains(book) ? "heart.fill" : "heart")
                 .foregroundColor(.red)
                 .onTapGesture {
-               //     bookListViewModel.saveFavBook
-                    
-                bookListViewModel.toggleFav(book: book)
+                    bookListViewModel.toggleFav(book: book)
                 }
         }
         .foregroundColor(.secondary)

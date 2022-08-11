@@ -43,6 +43,7 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        //automaticallyMergesFromParent is important because it merges the changes onto the view context.
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
 }

@@ -30,4 +30,9 @@ struct BookInfo: Codable, Hashable {
     struct BookImage: Codable, Hashable {
         var thumbnail: URL?
     }
+    
+    // MARK: Neat class level helper function
+    static func make(from book: CDFavoriteBook) -> BookInfo {
+        return BookInfo(title: book.cdTitle ?? "", authors: [book.cdAuthor ?? ""], description: book.cdDescription ?? "", pageCount: Int(book.cdPageCount), averageRating: book.cdAverageRating, imageLinks: BookImage(thumbnail: URL(string: "Are you using this?")), id: book.cdID?.uuidString)
+    }
 }

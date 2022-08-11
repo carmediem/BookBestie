@@ -14,37 +14,54 @@ struct FavBookListView: View {
     //books that are added to the favorite list by toggling. this is what is used for sorting by author and title
     @EnvironmentObject var bookListViewModel: BookListViewModel
     
-   var books: [BookInfo] = []
-
+    @FetchRequest(entity: CDFavoriteBook.entity(), sortDescriptors: [], predicate: nil, animation: .linear)
+    var favBooks: FetchedResults<CDFavoriteBook>
+    
+    var books: [BookInfo] = []
+    
     var body: some View {
-      NavigationView {
-          ZStack {
-              Color("background4").edgesIgnoringSafeArea(.all)
-              
-              
-              Button(action: {
-                  bookListViewModel.sortFavs()
-              }, label: {
-                  Text("Toggle Favorites")
-              })
-              .padding()
-              
-        List {
-           Section(header: SortView()) {
-            ForEach(bookViewModel.books, id: \.self) { (book: BookInfo) in
-
-            NavigationLink(destination: BookDetailView(book: book)) {
-              BookRowView(book: book)
+        NavigationView {
+            ZStack {
+                Color("background4").edgesIgnoringSafeArea(.all)
+                
+                List {
+                    Section(header: SortView()) {
+                        if !bookListViewModel.showingFavs {
+                            ForEach(bookViewModel.books, id: \.self) { book in
+                                
+                                NavigationLink(destination: BookDetailView(book: book)) {
+                                    BookRowView(book: book)
+                                }
+                            }
+                            .onDelete(perform: bookViewModel.deleteBook(indexSet:))
+                        } else {
+                            ForEach(favBooks, id: \.self) { favBook in
+                                // MARK: You need to make this display whatever info you want now, instead of just a title. BookDetailView has a book property, that is a BookInfo. NOT a CDFavoriteBook. You must convert the CDFavoriteBook --> BookInfo
+                                   NavigationLink(destination: BookDetailView(book: nil, favoriteBook: favBook)) {
+                                Text(favBook.cdTitle ?? "Nothing here")
+                                
+//                                          BookRowView(book: book)
+                                       
+                                      }
+                            }
+                            .onDelete { indexSet in
+                                //need to pass a book or book id here.
+                                for index in indexSet {
+                                    let favBook = favBooks[index]
+                                    bookListViewModel.deleteNewFavBook(bookTitle: favBook.cdTitle ?? "")
+                                }
+                            }
+                        }
+                    }
+                    .listStyle(PlainListStyle())
+                    .navigationTitle("My Favorite Books")
+                }
             }
-          }
-          .onDelete(perform: bookViewModel.deleteBook(indexSet:))
         }
-        .listStyle(PlainListStyle())
-        .navigationTitle("My Favorite Books")
-      }
+        .onAppear {
+            print(favBooks.count)
+        }
     }
-  }
-}
 }
 
 
