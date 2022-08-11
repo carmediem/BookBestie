@@ -20,9 +20,9 @@ class CoreDataManager {
         if context.hasChanges {
             do {
                 try context.save()
+                print("Save successful")
             } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+                print("Error saving: \(error)")
             }
         }
     }

@@ -51,7 +51,6 @@ class BookCollectionViewController: UIViewController {
         button.contentHorizontalAlignment = .trailing
         
         #warning("FOLLOW UP WITH ERICH. Button still doesnt work")
-  //      self.present(FavBookListView, animated: true, completion: nil)
         let hostingController = UIHostingController(rootView: FavBookListView())
         show(hostingController, sender: self)
     //    self.navigationController?.pushViewController(hostingController, animated: true)

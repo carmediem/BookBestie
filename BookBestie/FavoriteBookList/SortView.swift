@@ -17,15 +17,21 @@ struct SortView: View {
             Button {
                 bookListViewModel.sortbyTitle()
             } label: {
-            Text("Title")
+                Text("Title")
             }.buttonStyle(.bordered)
-       
             
             Button {
                 bookListViewModel.sortByAuthor()
             } label: {
-            Text("Author")
+                Text("Author")
             }.buttonStyle(.bordered)
+            
+            Button(action: {
+                bookListViewModel.sortFavs()
+            }, label: {
+                Image(systemName: "heart.fill")
+            })
+            .padding()
         }
     }
 }

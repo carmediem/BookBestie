@@ -13,21 +13,21 @@ import CoreData
 class BookListViewModel: ObservableObject {
     
     @Published var books: [BookViewModel] = []
-    //  @Published var books = [BookInfo]()
     
     @Published var filteredBooks = [BookInfo]()
     @Published var showingFavs = false
-    @Published var savedBooks: Set<String>
     @Published var favoriteBooks: [CDFavoriteBook] = []
     
     private var favKeyVM = FavKeyViewModel()
     
-    let persistentContainer = PersistenceController.shared.container
-    
     init() {
-        self.savedBooks = favKeyVM.load()
+        let request: NSFetchRequest<CDFavoriteBook> = CDFavoriteBook.fetchRequest()
+        let favorites = try? persistentContainer.viewContext.fetch(request)
+        self.favoriteBooks = favorites ?? []
     }
     
+    let persistentContainer = PersistenceController.shared.container
+        
     func sortbyTitle() {
         filteredBooks = filteredBooks.sorted {
             return $0.title < $1.title
@@ -45,27 +45,23 @@ class BookListViewModel: ObservableObject {
         showingFavs.toggle()
     }
     
-    //}
     func contains(_ book: BookInfo) -> Bool {
-        savedBooks.contains(book.id ?? "")
+        return favoriteBooks.contains(where: { $0.cdTitle == book.title })
     }
     
     //check if self contains the book we tapped using the contains function (above). Logic is below.
     func toggleFav(book: BookInfo) {
         if contains(book) {
-            savedBooks.remove(book.id ?? "")
-            deleteNewFavBook(bookID: book.id ?? "")
+            deleteNewFavBook(bookTitle: book.title)
         } else {
-            savedBooks.insert(book.id ?? "")
             createNewFavBook(book: book)
         }
-        favKeyVM.save(items: savedBooks)
     }
     
     
     
     private func createNewFavBook(book: BookInfo) {
-        let context = persistentContainer.newBackgroundContext()
+        let context = persistentContainer.viewContext
         context.perform {
             let newFavBook = CDFavoriteBook(entity: CDFavoriteBook.entity(), insertInto: context)
             newFavBook.cdTitle = book.title
@@ -75,17 +71,23 @@ class BookListViewModel: ObservableObject {
             newFavBook.cdAverageRating = book.averageRating ?? 5
             newFavBook.cdID = UUID(uuidString: book.id ?? "")
             CoreDataManager.shared.saveContext(context: context)
+            self.favoriteBooks.append(newFavBook)
         }
     }
     
-    func deleteNewFavBook(bookID: String) {
-        let request: NSFetchRequest<CDFavoriteBook> = CDFavoriteBook.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(CDFavoriteBook.cdAuthor), ascending: false)]
-        let context = persistentContainer.newBackgroundContext()
+    func deleteNewFavBook(bookTitle: String) {
+        let context = persistentContainer.viewContext
         context.perform {
-            if let existing = try? context.fetch(request).first {
-                context.delete(existing)
+        let request: NSFetchRequest<CDFavoriteBook> = CDFavoriteBook.fetchRequest()
+        request.predicate = NSPredicate(format: "%K = %@", #keyPath(CDFavoriteBook.cdTitle), bookTitle)
+            if let existing = try? context.fetch(request) {
+                for book in existing {
+                    guard let index = self.favoriteBooks.firstIndex(of: book) else { return }
+                    self.favoriteBooks.remove(at: index)
+                    context.delete(book)
+                }
             }
+            CoreDataManager.shared.saveContext(context: context)
         }
     }
 }

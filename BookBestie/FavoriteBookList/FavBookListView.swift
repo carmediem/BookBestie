@@ -24,16 +24,9 @@ struct FavBookListView: View {
             ZStack {
                 Color("background4").edgesIgnoringSafeArea(.all)
                 
-                Button(action: {
-                    bookListViewModel.sortFavs()
-                }, label: {
-                    Text("Toggle Favorites")
-                })
-                .padding()
-                
                 List {
                     Section(header: SortView()) {
-                        if favBooks.isEmpty {
+                        if !bookListViewModel.showingFavs {
                             ForEach(bookViewModel.books, id: \.self) { book in
                                 
                                 NavigationLink(destination: BookDetailView(book: book)) {
@@ -43,17 +36,19 @@ struct FavBookListView: View {
                             .onDelete(perform: bookViewModel.deleteBook(indexSet:))
                         } else {
                             ForEach(favBooks, id: \.self) { favBook in
-                                //   NavigationLink(destination: BookDetailView() {
-                                Text(favBook.cdTitle ?? "")
-                    
-                                //          BookRowView(book: book)
-                                //      }
+                                // MARK: You need to make this display whatever info you want now, instead of just a title. BookDetailView has a book property, that is a BookInfo. NOT a CDFavoriteBook. You must convert the CDFavoriteBook --> BookInfo
+                                   NavigationLink(destination: BookDetailView(book: nil, favoriteBook: favBook)) {
+                                Text(favBook.cdTitle ?? "Nothing here")
+                                
+//                                          BookRowView(book: book)
+                                       
+                                      }
                             }
                             .onDelete { indexSet in
                                 //need to pass a book or book id here.
                                 for index in indexSet {
-                                let favBook = favBooks[index]
-                                    bookListViewModel.deleteNewFavBook(bookID: favBook.cdID?.uuidString ?? "")
+                                    let favBook = favBooks[index]
+                                    bookListViewModel.deleteNewFavBook(bookTitle: favBook.cdTitle ?? "")
                                 }
                             }
                         }
@@ -61,9 +56,10 @@ struct FavBookListView: View {
                     .listStyle(PlainListStyle())
                     .navigationTitle("My Favorite Books")
                 }
-                
-                
             }
+        }
+        .onAppear {
+            print(favBooks.count)
         }
     }
 }
