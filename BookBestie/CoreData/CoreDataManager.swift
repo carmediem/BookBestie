@@ -14,8 +14,9 @@ class CoreDataManager {
     
     let persistentContainer = PersistenceController.shared.container
     
-    func saveContext() {
-        let context = persistentContainer.viewContext
+    //this is happening in the main thread. View Context displays the views
+    func saveContext(context: NSManagedObjectContext) {
+        //this is the same as saying dispatch.. sync(will wait until the task is done). Perform and wait until im done. All the work needs to be done in the block. Anytime we save, we'll pss in the new context
         if context.hasChanges {
             do {
                 try context.save()
@@ -26,13 +27,16 @@ class CoreDataManager {
         }
     }
     
+    
     func addData(doc: DrawingDocument) {
-        let drawing = DrawingDoc(entity: DrawingDoc.entity(), insertInto: persistentContainer.viewContext)
-        drawing.data = doc.data
-        drawing.id = doc.id
-        drawing.name = doc.name
-        
-        saveContext()
+        let context = persistentContainer.newBackgroundContext()
+        context.perform { [self] in
+            let drawing = DrawingDoc(entity: DrawingDoc.entity(), insertInto: context)
+            drawing.data = doc.data
+            drawing.id = doc.id
+            drawing.name = doc.name
+            self.saveContext(context: context)
+        }
     }
     
     func getData() -> [DrawingDocument] {
@@ -54,15 +58,12 @@ class CoreDataManager {
     
     func updateData(data: DrawingDocument) {
         let request: NSFetchRequest<DrawingDoc> = DrawingDoc.fetchRequest()
-        let predicate = NSPredicate(format: "id = %@", data.id as CVarArg)
+        let predicate = NSPredicate(format: "id = %@", data.id  as CVarArg)
         request.predicate = predicate
-        do {
-            let results = try persistentContainer.viewContext.fetch(request)
+        if let results = try? persistentContainer.viewContext.fetch(request) {
             let obj = results.first
             obj?.setValue(data.data, forKey: "data")
-            saveContext()
-        } catch {
-            print("Error saving document update.")
+            saveContext(context: persistentContainer.viewContext)
         }
     }
     
@@ -71,18 +72,10 @@ class CoreDataManager {
         request.includesPropertyValues = false
         let predicate = NSPredicate(format: "id = %@", data.id as CVarArg)
         request.predicate = predicate
-        
-        do {
-            let results = try persistentContainer.viewContext.fetch(request)
-            for item in results {
-                persistentContainer.viewContext.delete(item)
-            }
-            
-            saveContext()
-        } catch {
-            print("Error deleting document from database")
+        if let results = try? persistentContainer.viewContext.fetch(request).first {
+            persistentContainer.viewContext.delete(results)
+            saveContext(context: persistentContainer.viewContext)
         }
     }
 }
-
 

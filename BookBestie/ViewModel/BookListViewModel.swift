@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import CoreData
 
 class BookListViewModel: ObservableObject {
     
@@ -21,17 +22,10 @@ class BookListViewModel: ObservableObject {
     
     private var favKeyVM = FavKeyViewModel()
     
-    //    var filteredBooks: [BookInfo] {
-    //        if showingFavs {
-    //            return books.filter { savedBooks.contains($0.id ?? "") }
-    //        }
-    //        return books
-    //    }
+    let persistentContainer = PersistenceController.shared.container
     
     init() {
         self.savedBooks = favKeyVM.load()
-        //need a function that will fetch all the books and set favorite books to contain all of them. No need for a predicate
-        
     }
     
     func sortbyTitle() {
@@ -56,32 +50,44 @@ class BookListViewModel: ObservableObject {
         savedBooks.contains(book.id ?? "")
     }
     
+    //check if self contains the book we tapped using the contains function (above). Logic is below.
     func toggleFav(book: BookInfo) {
         if contains(book) {
             savedBooks.remove(book.id ?? "")
-            //this removes it from the array
-            //need to go into the coredata store
-            //one private function for each of these.
             deleteNewFavBook(bookID: book.id ?? "")
         } else {
             savedBooks.insert(book.id ?? "")
-            //need to create one for coredata
-            //let new drawing doc = ... context.save. use book instead of drawingdoc
             createNewFavBook(book: book)
-
         }
         favKeyVM.save(items: savedBooks)
     }
     
+    
+    
     private func createNewFavBook(book: BookInfo) {
-        
+        let context = persistentContainer.newBackgroundContext()
+        context.perform {
+            let newFavBook = CDFavoriteBook(entity: CDFavoriteBook.entity(), insertInto: context)
+            newFavBook.cdTitle = book.title
+            newFavBook.cdAuthor = book.authors?.first
+            newFavBook.cdDescription = book.description ?? ""
+            newFavBook.cdPageCount = Int32(book.pageCount ?? 0)
+            newFavBook.cdAverageRating = book.averageRating ?? 5
+            newFavBook.cdID = UUID(uuidString: book.id ?? "")
+            CoreDataManager.shared.saveContext(context: context)
+        }
     }
     
-    private func deleteNewFavBook(bookID: String) {
-        
+    func deleteNewFavBook(bookID: String) {
+        let request: NSFetchRequest<CDFavoriteBook> = CDFavoriteBook.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: #keyPath(CDFavoriteBook.cdAuthor), ascending: false)]
+        let context = persistentContainer.newBackgroundContext()
+        context.perform {
+            if let existing = try? context.fetch(request).first {
+                context.delete(existing)
+            }
+        }
     }
-//may need to do some fethcing
-    
 }
 
 
@@ -101,3 +107,29 @@ struct BookViewModel {
         book.imageLinks?.thumbnail
     }
 }
+
+
+
+/*
+ Threading:
+ - if you have too much writing on a scratchpad. Each scratchpad has a certain amount of memory. Once that memory is taken up, it slows down or you need a new thread.
+ - each thread does some work
+ - DispatchQueue.main thread displays the views. The main thread is also where you update state, binding in the views. Do the heavy lifting in the background threads.
+ - Keep the main thread for UI
+ - Can also create your own threads (bookloader thread, url thread, etc- also give it a priorirty)
+ 
+ 
+ GDC:
+ - Grand Central Dispatch (dispatch queue)
+ */
+
+/*
+ Context:
+ - not unique to CoreData but genearlly means the same as thread
+ - memory bank
+ - Core data has its own threading not connected to Dispatch Queue
+ - if you want to do work in Core Data on a background thread, stay on the main thread because if you're on the background thread and the Core Data thread, it'll have to switch back and forth
+ 
+ 
+ Problem with making multiple context is that you could be creating and saving contexts in different threads.
+ */

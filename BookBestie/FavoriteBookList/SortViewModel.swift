@@ -14,7 +14,7 @@ class SortViewModel: ObservableObject {
     
     func sortbyTitle() {
         filteredBooks = filteredBooks.sorted {
-            return $0.title ?? "" < $1.title ?? ""
+            return $0.title < $1.title 
         }
     }
     

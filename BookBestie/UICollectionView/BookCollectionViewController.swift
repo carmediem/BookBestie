@@ -37,7 +37,7 @@ class BookCollectionViewController: UIViewController {
     //This will be the label for favorite books
     lazy var label: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 24)
         label.text = "Your favorite books"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -45,22 +45,30 @@ class BookCollectionViewController: UIViewController {
     
     //Button to navigate to FavBookListView. ADD SOME CONSTRAINTS TO THIS
     lazy var button: UIButton = {
-        let button = UIButton(frame: CGRect(x: 50, y: 50, width: 100, height: 100))
+        let button = UIButton(frame: CGRect(x: 260, y: -35, width: 100, height: 100))
         button.setTitleColor(.black, for: .normal)
         button.setTitle("See All →", for: .normal)
         button.contentHorizontalAlignment = .trailing
-        return button
         
+        #warning("FOLLOW UP WITH ERICH. Button still doesnt work")
+  //      self.present(FavBookListView, animated: true, completion: nil)
+        let hostingController = UIHostingController(rootView: FavBookListView())
+        show(hostingController, sender: self)
+    //    self.navigationController?.pushViewController(hostingController, animated: true)
+        
+        return button
     }()
+    
+    
     func setupButtons() {
     button.addTarget(self, action: #selector(transitionButtonTapped(sender:)), for: .touchUpInside)
     }
                                                                                 
     @objc func transitionButtonTapped(sender: UIButton) {
-     //   transitionAction()
+       // transitionAction()
         print("button tapped")
-//        let hostingController = UIHostingController(rootView: FavBookListView())
-//        navigationController?.pushViewController(hostingController, animated: true)
+        let hostingController = UIHostingController(rootView: FavBookListView())
+        navigationController?.pushViewController(hostingController, animated: true)
     }
   
     
@@ -71,21 +79,20 @@ class BookCollectionViewController: UIViewController {
     }
     
     private func setupView() {
-//        view.addSubview(label)
-//        view.addSubview(collectionView)
+        view.addSubview(label)
+        view.addSubview(collectionView)
         view.addSubview(button)
         button.isUserInteractionEnabled = true
         
-        #warning("button isnt showing up")
         NSLayoutConstraint.activate( [
-//            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-//            label.heightAnchor.constraint(equalToConstant: 24),
-//            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-//            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-//            collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 16),
-//            collectionView.heightAnchor.constraint(equalToConstant: 320),
-            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            button.heightAnchor.constraint(equalToConstant: 18),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            label.heightAnchor.constraint(equalToConstant: 24),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 16),
+            collectionView.heightAnchor.constraint(equalToConstant: 320),
+            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 120),
+            button.heightAnchor.constraint(equalToConstant: 40),
         
         ])
     }
@@ -110,19 +117,8 @@ extension BookCollectionViewController: UICollectionViewDelegateFlowLayout {
 }
 
 
-
-
-//#warning("follow up with Erich")
-//func makeCoordinator() -> Coordinator {
-//    return Coordinator
-//}
-
-
 extension BookCollectionViewController {
     class Coordinator: NSObject, ObservableObject {
-    //    @ObservedObject var model:
-        
-     //   init(book: BookDataStore)
     }
 }
 
