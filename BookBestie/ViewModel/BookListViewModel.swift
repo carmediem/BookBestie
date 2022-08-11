@@ -45,12 +45,14 @@ class BookListViewModel: ObservableObject {
         showingFavs.toggle()
     }
     
-    func contains(_ book: BookInfo) -> Bool {
+    func contains(_ book: BookInfo?) -> Bool {
+        guard let book = book else { return false }
         return favoriteBooks.contains(where: { $0.cdTitle == book.title })
     }
     
     //check if self contains the book we tapped using the contains function (above). Logic is below.
-    func toggleFav(book: BookInfo) {
+    func toggleFav(book: BookInfo?) {
+        guard let book = book else { return }
         if contains(book) {
             deleteNewFavBook(bookTitle: book.title)
         } else {
@@ -60,7 +62,8 @@ class BookListViewModel: ObservableObject {
     
     
     
-    private func createNewFavBook(book: BookInfo) {
+     func createNewFavBook(book: BookInfo?) {
+         guard let book = book else { return }
         let context = persistentContainer.viewContext
         context.perform {
             let newFavBook = CDFavoriteBook(entity: CDFavoriteBook.entity(), insertInto: context)

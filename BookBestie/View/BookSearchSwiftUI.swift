@@ -12,8 +12,8 @@ struct BookSearchSwiftUI: View {
     VStack {
           
     BookControllerRepresentable()
-    QuoteView()
     BookCollectionViewControllerRepresentable()
+    QuoteView()
 
         }
     }
