@@ -13,15 +13,7 @@ import UIKit
 
 
 class BookCollectionViewController: UIViewController {
- 
-//    var completionHandler: ((BookInfo) -> Void)?
-//    init(transitionAction: @escaping (BookInfo) -> Void) {
-//        super.init(nibName: nil, bundle: nil)
-//        self.completionHandler = transitionAction
-//    }
-    
-  
-    //Collection View of favorite books with a horizontal scroll director
+
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -43,17 +35,13 @@ class BookCollectionViewController: UIViewController {
         return label
     }()
     
-    //Button to navigate to FavBookListView. ADD SOME CONSTRAINTS TO THIS
     lazy var button: UIButton = {
         let button = UIButton(frame: CGRect(x: 260, y: -35, width: 100, height: 100))
         button.setTitleColor(.black, for: .normal)
         button.setTitle("See All →", for: .normal)
         button.contentHorizontalAlignment = .trailing
         
-        #warning("Button still doesnt work")
-        let hostingController = UIHostingController(rootView: FavBookListView())
-        show(hostingController, sender: self)
-        self.navigationController?.pushViewController(hostingController, animated: true)
+       
         
         return button
     }()
@@ -65,9 +53,10 @@ class BookCollectionViewController: UIViewController {
                                                                                 
     @objc func transitionButtonTapped(sender: UIButton) {
        // transitionAction()
+        
         print("button tapped")
         let hostingController = UIHostingController(rootView: FavBookListView())
-        navigationController?.pushViewController(hostingController, animated: true)
+        show(hostingController, sender: self)
     }
   
     
@@ -82,6 +71,7 @@ class BookCollectionViewController: UIViewController {
         view.addSubview(collectionView)
         view.addSubview(button)
         button.isUserInteractionEnabled = true
+        setupButtons()
         
         NSLayoutConstraint.activate( [
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
