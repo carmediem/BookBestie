@@ -13,10 +13,10 @@ import SwiftUI
 
 struct BookDetailView: View {
     
-   @State var book: BookInfo?
+    @State var book: BookInfo?
     var favoriteBook: CDFavoriteBook?
-    @EnvironmentObject var vm: BookListViewModel
-  
+    
+    @EnvironmentObject private var vm: BookListViewModel
     
     var body: some View {
         NavigationView {

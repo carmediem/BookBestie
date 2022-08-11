@@ -8,10 +8,15 @@
 import Foundation
 import UIKit
 import SwiftUI
-
-//UIViewControllerRepresentable??
+import Combine
 
 class BookSearchViewController: UIViewController {
+    
+    enum Action {
+        case move(book: BookInfo)
+    }
+    
+    public var publisher = PassthroughSubject<(Action), Never>()
     
     var safeArea: UILayoutGuide {
         return self.view.safeAreaLayoutGuide
@@ -96,10 +101,9 @@ extension BookSearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let book = books[indexPath.row]
-        let hostingController = UIHostingController(rootView: BookDetailView(book: book))
-        show(hostingController, sender: self)
-//        navigationController?.pushViewController(hostingController, animated: true)
-//        print("To Book Detail")
+        publisher.send(.move(book: book))
+//        let hostingController = UIHostingController(rootView: BookDetailView(book: book))
+//        show(hostingController, sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -132,21 +136,20 @@ extension BookSearchViewController: UISearchBarDelegate {
 }
 
 struct BookControllerRepresentable: UIViewControllerRepresentable {
-  
-    
+    @EnvironmentObject private var model: BookListViewModel
+      
     func makeUIViewController(context: Context) -> BookSearchViewController {
         let bookSearchVC = BookSearchViewController()
-//        bookSearchVC.delegate = context.coordinator
+        bookSearchVC.publisher
+            .sink { action in
+                switch action {
+                    case .move(let book):
+                    model.selectedBook = book
+                }
+            }.store(in: &model.disposeBag)
         return bookSearchVC
     }
     
     func updateUIViewController(_ uiViewController: BookSearchViewController, context: Context) {}
     
 }
-
-//public var publisher = PassThroughSubject(Action, Never>() import Combine
-
-//var transitionAction: () -> Void
-//@objc func transitionButtonTapped(sender: UIButton) {
-//    transitionAction()
-//}

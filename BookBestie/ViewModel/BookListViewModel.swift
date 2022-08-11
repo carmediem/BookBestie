@@ -5,18 +5,19 @@
 //  Created by Carmen Chiu on 8/4/22.
 //
 
-import Foundation
-import UIKit
 import SwiftUI
 import CoreData
+import Combine
 
 class BookListViewModel: ObservableObject {
+    var disposeBag = Set<AnyCancellable>()
     
     @Published var books: [BookViewModel] = []
     
     @Published var filteredBooks = [BookInfo]()
     @Published var showingFavs = false
     @Published var favoriteBooks: [CDFavoriteBook] = []
+    @Published var selectedBook: BookInfo?
     
     private var favKeyVM = FavKeyViewModel()
     
