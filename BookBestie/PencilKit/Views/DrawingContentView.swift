@@ -14,7 +14,7 @@ struct DrawingContentView: View {
     @State private var addNewShown = false
     
     var body: some View {
-        NavigationView {
+      //  NavigationView {
             List {
                 ForEach(manager.docs) { doc in
                     NavigationLink(destination: DrawingWrapper(manager: manager, id: doc.id),
@@ -28,7 +28,7 @@ struct DrawingContentView: View {
                 AddNewDocument(manager: manager, addShown: $addNewShown)
             })
         
-        }
+     //   }
     }
 }
 

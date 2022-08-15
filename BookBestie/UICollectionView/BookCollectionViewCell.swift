@@ -40,7 +40,6 @@ class BookCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    #warning("added these")
     func embed(in parent: UIViewController) {
         parent.addChild(host)
         host.didMove(toParent: parent)

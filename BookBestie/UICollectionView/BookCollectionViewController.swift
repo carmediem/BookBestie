@@ -35,7 +35,7 @@ class BookCollectionViewController: UIViewController {
     lazy var label: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 24)
-        label.text = "Your favorite books"
+        label.text = "Recent favorite books"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -52,11 +52,11 @@ class BookCollectionViewController: UIViewController {
 //        button.addTarget(self, action: #selector(transitionButtonTapped(sender:)), for: .touchUpInside)
 //    }
                                                                                 
-    @objc func transitionButtonTapped(sender: UIButton) {
-        // Need to use Combine to move to the SwiftUI view with the environment object
-        print("button tapped")
-        publisher.send(.transition)
-    }
+//    @objc func transitionButtonTapped(sender: UIButton) {
+//        // Need to use Combine to move to the SwiftUI view with the environment object
+//        print("button tapped")
+//        publisher.send(.transition)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ class BookCollectionViewController: UIViewController {
         
         NSLayoutConstraint.activate( [
             label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            label.heightAnchor.constraint(equalToConstant: 24),
+            label.heightAnchor.constraint(equalToConstant: 18),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 16),

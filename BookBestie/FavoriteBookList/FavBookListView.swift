@@ -30,7 +30,7 @@ struct FavBookListView: View {
                             ForEach(bookViewModel.books, id: \.self) { book in
                                 
                                 NavigationLink(destination: BookDetailView(book: book)) {
-                    //                BookRowView(book: book)
+                       //             BookRowView(book: "", cdAuthorText: "", cdDescriptionText: "", cdImage:, cdTitleText: "", cdImage:)
                                 }
                             }
                             .onDelete(perform: bookViewModel.deleteBook(indexSet:))
@@ -39,10 +39,13 @@ struct FavBookListView: View {
                                 // MARK: You need to make this display whatever info you want now, instead of just a title. BookDetailView has a book property, that is a BookInfo. NOT a CDFavoriteBook. You must convert the CDFavoriteBook --> BookInfo
                                 
                                    NavigationLink(destination: BookDetailView(book: nil, favoriteBook: favBook)) {
-                                Text(favBook.cdTitle ?? "Nothing here")
+                                       VStack(alignment: .leading) {
+                                       Text(favBook.cdTitle ?? "Nothing here")
+                                               .bold()
+                                           Text(favBook.cdAuthor ?? "Nothing here")
                                 
 //                                          BookRowView(book: book)
-                                       
+                                       }
                                       }
                             }
                             .onDelete { indexSet in

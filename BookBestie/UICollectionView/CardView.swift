@@ -24,7 +24,7 @@ struct Card: View {
     var book: BookInfo
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .center, spacing: 8) {
             
 //     ImageView(withURL: book.imageLinks?.thumbnail?.absoluteString ?? "")
             Image("bookbestie")

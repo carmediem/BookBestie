@@ -19,7 +19,7 @@ struct BookNotesView: View {
     @State private var newNoteContent: String = ""
     
     var body: some View {
-        NavigationView {
+      //  NavigationView {
             ZStack {
                 Color("background4").edgesIgnoringSafeArea(.all)
             List {
@@ -51,7 +51,7 @@ struct BookNotesView: View {
             }
         }
         .sheet(isPresented: $showAddNoteSheet) {
-            NavigationView {
+           NavigationView {
                 Form {
                     Section {
                     TextField("Book Notes", text: $newNoteTitle)
@@ -79,10 +79,10 @@ struct BookNotesView: View {
                         .tint(.red)
                     }.frame(width: 150, height: 25, alignment: .center)
                 }
-                .navigationTitle("Add Note")
+                .navigationBarTitle("Add Note", displayMode: .inline)
             }
         }
-    }
+   // }
 }
 }
 

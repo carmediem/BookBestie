@@ -28,7 +28,7 @@ struct SplashScreen: View {
                     Image("bookbestie8")
                     .resizable()
                     .frame(width: 190, height: 190)
-                    .padding(.bottom, 45)
+                    .padding(.bottom, 90)
                 
                 Text("Lets find our next favorite book 📖")
                     .font(.title3)
