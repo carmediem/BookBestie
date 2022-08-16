@@ -1,5 +1,5 @@
 # BookBestie
-<center><img src="https://user-images.githubusercontent.com/98146281/184946707-68e8cf94-eaf2-47e1-88a5-17def1755c93.gif" width=25% height=25%></center>
+<p align="center"><img src="https://user-images.githubusercontent.com/98146281/184946707-68e8cf94-eaf2-47e1-88a5-17def1755c93.gif" width=25% height=25%></p>
 
 BookBestie is the book app for the book lover! Users can keep track of their books, take notes on it, and even create drawings using PencilKit! 
 With the Google Books API, users can quickly add books to their bookshelf by making a search in the 10 million book database. 
