@@ -30,7 +30,7 @@ Features:
 
 Notes View: 
 
-<img width="712" alt="Screen Shot 2022-08-16 at 10 49 10 AM" src="https://user-images.githubusercontent.com/98146281/184945594-8504690a-e6b7-40a2-9b2e-be9b3835b872.png">
+<img width="712" alt="Screen Shot 2022-08-16 at 10 49 10 AM" src="https://user-images.githubusercontent.com/98146281/184945594-8504690a-e6b7-40a2-9b2e-be9b3835b872.png" width=50% height=50%>
 
 Pencil Kit: 
 
